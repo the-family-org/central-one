@@ -1,0 +1,24 @@
+{
+    "folders": [
+        {
+            "name": "ROOT",
+            "path": "../",
+        },
+        {
+            "name": "API",
+            "path": "../packages/api",
+        },
+        {
+            "name": "UI",
+            "path": "../packages/ui",
+        },
+        {
+            "name": "WEB",
+            "path": "../packages/web",
+        },
+        {
+            "name": "WEB-NEWS-READER",
+            "path": "../packages/web-news-reader",
+        },
+    ]
+}

@@ -1,0 +1,42 @@
+.container {
+  @import '../../props/margin-bottom/margin-bottom';
+
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  $size: 35px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+
+  min-width: $size;
+  min-height: $size;
+  width: $size;
+  height: $size;
+  margin-bottom: auto;
+  border: 3px solid var(--color-strong-border);
+  line-height: 29px;
+  font-size: 28px;
+
+  font-weight: var(--font-weight-extra-bold);
+  border-radius: 50%;
+  background: var(--color-background-strong-contrast);
+  color: var(--color-foreground-contrast);
+
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  forced-color-adjust: none;
+}
+
+.slot-container {
+  padding-left: 12px;
+
+  font-weight: var(--font-weight-bold);
+  color: var(--color-foreground-strong);
+}

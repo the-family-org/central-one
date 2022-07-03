@@ -1,0 +1,44 @@
+.container {
+  @import '../../props/margin-bottom/margin-bottom';
+  @import '../../props/font-size-with-line-height/font-size-with-line-height';
+  @import '../../props/list-style-type/list-style-type';
+  @import '../../props/text-align/text-align';
+  @import '../../props/column-gap/column-gap';
+  @import '../../props/row-gap/row-gap';
+
+  display: flex;
+  flex-direction: column;
+
+  list-style-position: inside;
+}
+
+@media (max-width: 920px) {
+  .container {
+    &[data-adaptiveSize='true'] {
+      &[data-fontSize='l5'],
+      &[data-fontSize='l4'],
+      &[data-fontSize='l3'],
+      &[data-fontSize='l2'],
+      &[data-fontSize='l'] {
+        font-size: var(--font-size-l);
+        line-height: var(--font-line-height-l);
+      }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    &[data-adaptiveSize='true'] {
+      &[data-fontSize='l5'],
+      &[data-fontSize='l4'],
+      &[data-fontSize='l3'],
+      &[data-fontSize='l2'],
+      &[data-fontSize='l'],
+      &[data-fontSize='m'] {
+        font-size: var(--font-size-m);
+        line-height: var(--font-line-height-m);
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+& {
+  &[data-marginRight='s4'] {
+    margin-right: var(--spacing-s4);
+  }
+
+  &[data-marginRight='s3'] {
+    margin-right: var(--spacing-s3);
+  }
+
+  &[data-marginRight='s2'] {
+    margin-right: var(--spacing-s2);
+  }
+
+  &[data-marginRight='s'] {
+    margin-right: var(--spacing-s);
+  }
+
+  &[data-marginRight='m'] {
+    margin-right: var(--spacing-m);
+  }
+
+  &[data-marginRight='l'] {
+    margin-right: var(--spacing-l);
+  }
+
+  &[data-marginRight='l2'] {
+    margin-right: var(--spacing-l2);
+  }
+
+  &[data-marginRight='l3'] {
+    margin-right: var(--spacing-l3);
+  }
+
+  &[data-marginRight='l4'] {
+    margin-right: var(--spacing-l4);
+  }
+
+  &[data-marginRight='l5'] {
+    margin-right: var(--spacing-l5);
+  }
+
+  &[data-marginRight='unset'] {
+    margin-right: unset;
+  }
+
+  &[data-marginRight='none'] {
+    margin-right: 0;
+  }
+}

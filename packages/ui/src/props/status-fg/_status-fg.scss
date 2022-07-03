@@ -1,0 +1,89 @@
+& {
+  &[data-statusFg='contrast'] {
+    color: var(--color-contrast);
+  }
+
+  &[data-statusFg='primary'] {
+    color: var(--color-primary);
+  }
+
+  &[data-statusFg='secondary'] {
+    color: var(--color-secondary);
+  }
+
+  &[data-statusFg='received'] {
+    color: var(--color-received);
+  }
+
+  &[data-statusFg='neutral'] {
+    color: var(--color-neutral);
+  }
+
+  &[data-statusFg='discreet'] {
+    color: var(--color-discreet);
+  }
+
+  &[data-statusFg='disabled'] {
+    color: var(--color-disabled);
+  }
+
+  &[data-statusFg='inactive'] {
+    color: var(--color-inactive);
+  }
+
+  &[data-statusFg='active'] {
+    color: var(--color-active);
+  }
+
+  &[data-statusFg='current'] {
+    color: var(--color-current);
+  }
+
+  &[data-statusFg='new'] {
+    color: var(--color-new);
+  }
+
+  &[data-statusFg='success'] {
+    color: var(--color-success);
+  }
+
+  &[data-statusFg='positive'] {
+    color: var(--color-positive);
+  }
+
+  &[data-statusFg='pending'] {
+    color: var(--color-pending);
+  }
+
+  &[data-statusFg='info'] {
+    color: var(--color-info);
+  }
+
+  &[data-statusFg='sent'] {
+    color: var(--color-sent);
+  }
+
+  &[data-statusFg='emphasis'] {
+    color: var(--color-emphasis);
+  }
+
+  &[data-statusFg='negative'] {
+    color: var(--color-negative);
+  }
+
+  &[data-statusFg='rejected'] {
+    color: var(--color-rejected);
+  }
+
+  &[data-statusFg='error'] {
+    color: var(--color-error);
+  }
+
+  &[data-statusFg='declined'] {
+    color: var(--color-declined);
+  }
+
+  &[data-statusFg='warning'] {
+    color: var(--color-warning);
+  }
+}

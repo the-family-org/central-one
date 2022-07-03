@@ -1,0 +1,33 @@
+& {
+  &[data-display='flex'] {
+    display: flex;
+  }
+
+  &[data-display='inline-flex'] {
+    display: inline-flex;
+  }
+
+  &[data-display='block'] {
+    display: block;
+  }
+
+  &[data-display='inline-block'] {
+    display: inline-block;
+  }
+
+  &[data-display='grid'] {
+    display: grid;
+  }
+
+  &[data-display='inline-grid'] {
+    display: grid;
+  }
+
+  &[data-display='none'] {
+    display: none;
+  }
+
+  &[data-display='unset'] {
+    display: unset;
+  }
+}

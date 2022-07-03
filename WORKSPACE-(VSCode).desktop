@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=WORKSPACE - VSCode
+Exec=code .vscode/central.code-workspace
+Icon=visual-studio-code
+Terminal=false

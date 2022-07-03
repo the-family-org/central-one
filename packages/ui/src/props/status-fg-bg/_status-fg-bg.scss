@@ -1,0 +1,111 @@
+& {
+  &[data-statusFgBg='contrast'] {
+    color: var(--color-contrast);
+    background-color: var(--color-contrast-up);
+  }
+
+  &[data-statusFgBg='primary'] {
+    color: var(--color-primary);
+    background-color: var(--color-primary-up);
+  }
+
+  &[data-statusFgBg='secondary'] {
+    color: var(--color-secondary);
+    background-color: var(--color-secondary-up);
+  }
+
+  &[data-statusFgBg='received'] {
+    color: var(--color-received);
+    background-color: var(--color-received-up);
+  }
+
+  &[data-statusFgBg='neutral'] {
+    color: var(--color-neutral);
+    background-color: var(--color-neutral-up);
+  }
+
+  &[data-statusFgBg='discreet'] {
+    color: var(--color-discreet);
+    background-color: var(--color-discreet-up);
+  }
+
+  &[data-statusFgBg='disabled'] {
+    color: var(--color-disabled);
+    background-color: var(--color-disabled-up);
+  }
+
+  &[data-statusFgBg='inactive'] {
+    color: var(--color-inactive);
+    background-color: var(--color-inactive-up);
+  }
+
+  &[data-statusFgBg='active'] {
+    color: var(--color-active);
+    background-color: var(--color-active-up);
+  }
+
+  &[data-statusFgBg='current'] {
+    color: var(--color-current);
+    background-color: var(--color-current-up);
+  }
+
+  &[data-statusFgBg='new'] {
+    color: var(--color-new);
+    background-color: var(--color-new-up);
+  }
+
+  &[data-statusFgBg='success'] {
+    color: var(--color-success);
+    background-color: var(--color-success-up);
+  }
+
+  &[data-statusFgBg='positive'] {
+    color: var(--color-positive);
+    background-color: var(--color-positive-up);
+  }
+
+  &[data-statusFgBg='pending'] {
+    color: var(--color-pending);
+    background-color: var(--color-pending-up);
+  }
+
+  &[data-statusFgBg='info'] {
+    color: var(--color-info);
+    background-color: var(--color-info-up);
+  }
+
+  &[data-statusFgBg='sent'] {
+    color: var(--color-sent);
+    background-color: var(--color-sent-up);
+  }
+
+  &[data-statusFgBg='emphasis'] {
+    color: var(--color-emphasis);
+    background-color: var(--color-emphasis-up);
+  }
+
+  &[data-statusFgBg='negative'] {
+    color: var(--color-negative);
+    background-color: var(--color-negative-up);
+  }
+
+  &[data-statusFgBg='rejected'] {
+    color: var(--color-rejected);
+    background-color: var(--color-rejected-up);
+  }
+
+  &[data-statusFgBg='error'] {
+    color: var(--color-error);
+    background-color: var(--color-error-up);
+  }
+
+  &[data-statusFgBg='declined'] {
+    color: var(--color-declined);
+    background-color: var(--color-declined-up);
+  }
+
+  &[data-statusFgBg='warning'] {
+    color: var(--color-warning);
+    background-color: var(--color-warning-up);
+  }
+}

@@ -1,0 +1,25 @@
+& {
+  &[data-justifyContent='flex-start'] {
+    justify-content: flex-start;
+  }
+
+  &[data-justifyContent='flex-end'] {
+    justify-content: flex-end;
+  }
+
+  &[data-justifyContent='center'] {
+    justify-content: center;
+  }
+
+  &[data-justifyContent='space-between'] {
+    justify-content: space-between;
+  }
+
+  &[data-justifyContent='space-around'] {
+    justify-content: space-around;
+  }
+
+  &[data-justifyContent='unset'] {
+    justify-content: unset;
+  }
+}

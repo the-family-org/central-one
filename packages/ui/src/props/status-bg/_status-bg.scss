@@ -1,0 +1,111 @@
+& {
+  &[data-statusBg='contrast'] {
+    color: var(--color-foreground);
+    background-color: var(--color-contrast-down);
+  }
+
+  &[data-statusBg='primary'] {
+    color: var(--color-contrast);
+    background-color: var(--color-primary);
+  }
+
+  &[data-statusBg='secondary'] {
+    color: var(--color-contrast);
+    background-color: var(--color-secondary);
+  }
+
+  &[data-statusBg='received'] {
+    color: var(--color-contrast);
+    background-color: var(--color-received);
+  }
+
+  &[data-statusBg='neutral'] {
+    color: var(--color-contrast);
+    background-color: var(--color-neutral);
+  }
+
+  &[data-statusBg='discreet'] {
+    color: var(--color-contrast);
+    background-color: var(--color-discreet);
+  }
+
+  &[data-statusBg='disabled'] {
+    color: var(--color-disabled-up);
+    background-color: var(--color-disabled);
+  }
+
+  &[data-statusBg='inactive'] {
+    color: var(--color-inactive-up);
+    background-color: var(--color-inactive);
+  }
+
+  &[data-statusBg='active'] {
+    color: var(--color-contrast);
+    background-color: var(--color-active);
+  }
+
+  &[data-statusBg='current'] {
+    color: var(--color-contrast);
+    background-color: var(--color-current);
+  }
+
+  &[data-statusBg='new'] {
+    color: var(--color-contrast);
+    background-color: var(--color-new);
+  }
+
+  &[data-statusBg='success'] {
+    color: var(--color-contrast);
+    background-color: var(--color-success);
+  }
+
+  &[data-statusBg='positive'] {
+    color: var(--color-contrast);
+    background-color: var(--color-positive);
+  }
+
+  &[data-statusBg='pending'] {
+    color: var(--color-contrast);
+    background-color: var(--color-pending);
+  }
+
+  &[data-statusBg='info'] {
+    color: var(--color-contrast);
+    background-color: var(--color-info);
+  }
+
+  &[data-statusBg='sent'] {
+    color: var(--color-contrast);
+    background-color: var(--color-sent);
+  }
+
+  &[data-statusBg='emphasis'] {
+    color: var(--color-contrast);
+    background-color: var(--color-emphasis);
+  }
+
+  &[data-statusBg='negative'] {
+    color: var(--color-contrast);
+    background-color: var(--color-negative);
+  }
+
+  &[data-statusBg='rejected'] {
+    color: var(--color-contrast);
+    background-color: var(--color-rejected);
+  }
+
+  &[data-statusBg='error'] {
+    color: var(--color-contrast);
+    background-color: var(--color-error);
+  }
+
+  &[data-statusBg='declined'] {
+    color: var(--color-contrast);
+    background-color: var(--color-declined);
+  }
+
+  &[data-statusBg='warning'] {
+    color: var(--color-contrast);
+    background-color: var(--color-warning);
+  }
+}

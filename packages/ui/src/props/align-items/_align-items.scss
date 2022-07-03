@@ -1,0 +1,25 @@
+& {
+  &[data-alignItems='flex-start'] {
+    align-items: flex-start;
+  }
+
+  &[data-alignItems='flex-end'] {
+    align-items: flex-end;
+  }
+
+  &[data-alignItems='center'] {
+    align-items: center;
+  }
+
+  &[data-alignItems='baseline'] {
+    align-items: baseline;
+  }
+
+  &[data-alignItems='stretch'] {
+    align-items: stretch;
+  }
+
+  &[data-alignItems='unset'] {
+    align-items: unset;
+  }
+}

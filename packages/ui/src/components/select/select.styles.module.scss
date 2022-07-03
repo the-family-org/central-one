@@ -1,0 +1,25 @@
+.container {
+  $minSpacing: 4px;
+
+  display: inline-flex;
+  flex: 1;
+
+  min-height: 50px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: $minSpacing calc($minSpacing + 4px);
+  border: 3px solid var(--color-strong-border);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-regular);
+
+  border-radius: var(--border-radius);
+  color: var(--color-foreground);
+  background: var(--color-background);
+  outline: none;
+
+  &:focus {
+    box-shadow: inset 0px 0px 0px $minSpacing var(--color-focus);
+    border-radius: var(--border-radius);
+  }
+}

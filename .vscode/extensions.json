@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "svelte.svelte-vscode",
+    "Prisma.prisma",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "vunguyentuan.vscode-css-variables"
+  ]
+}

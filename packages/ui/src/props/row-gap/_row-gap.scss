@@ -1,0 +1,49 @@
+& {
+  &[data-rowGap='s4'] {
+    row-gap: var(--gap-s4);
+  }
+
+  &[data-rowGap='s3'] {
+    row-gap: var(--gap-s3);
+  }
+
+  &[data-rowGap='s2'] {
+    row-gap: var(--gap-s2);
+  }
+
+  &[data-rowGap='s'] {
+    row-gap: var(--gap-s);
+  }
+
+  &[data-rowGap='m'] {
+    row-gap: var(--gap-m);
+  }
+
+  &[data-rowGap='l'] {
+    row-gap: var(--gap-l);
+  }
+
+  &[data-rowGap='l2'] {
+    row-gap: var(--gap-l2);
+  }
+
+  &[data-rowGap='l3'] {
+    row-gap: var(--gap-l3);
+  }
+
+  &[data-rowGap='l4'] {
+    row-gap: var(--gap-l4);
+  }
+
+  &[data-rowGap='l5'] {
+    row-gap: var(--gap-l5);
+  }
+
+  &[data-rowGap='none'] {
+    row-gap: 0;
+  }
+
+  &[data-rowGap='unset'] {
+    row-gap: unset;
+  }
+}

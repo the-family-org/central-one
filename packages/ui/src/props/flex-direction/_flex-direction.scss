@@ -1,0 +1,21 @@
+& {
+  &[data-flexDirection='column'] {
+    flex-direction: column;
+  }
+
+  &[data-flexDirection='row'] {
+    flex-direction: row;
+  }
+
+  &[data-flexDirection='column-reverse'] {
+    flex-direction: column-reverse;
+  }
+
+  &[data-flexDirection='row-reverse'] {
+    flex-direction: row-reverse;
+  }
+
+  &[data-flexDirection='unset'] {
+    flex-direction: unset;
+  }
+}

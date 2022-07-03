@@ -1,0 +1,42 @@
+.container {
+  @import '../../props/button-status/button-status';
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  appearance: none;
+  min-height: 38px;
+  min-width: 38px;
+  width: fit-content;
+  height: fit-content;
+  gap: var(--gap-s2);
+  padding: 0.15rem 0.8rem;
+  border: none;
+  font-size: var(--font-size-m);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px;
+  border-style: solid;
+  border-radius: var(--border-radius);
+
+  box-shadow: none;
+  text-decoration: none;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+
+  &:active {
+    filter: brightness(1.4);
+  }
+
+  &[data-fullWidth='true'] {
+    width: 100%;
+    flex: 1;
+  }
+}

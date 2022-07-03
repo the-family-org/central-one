@@ -1,0 +1,99 @@
+& {
+  &[disabled] {
+    cursor: not-allowed;
+    text-decoration: none;
+
+    &[data-linkType='default'] {
+      color: var(--color-link-disabled);
+
+      &:hover {
+        color: var(--color-link-disabled);
+      }
+    }
+
+    &[data-linkType='contrast'] {
+      color: var(--color-link-contrast-disabled);
+
+      &:hover {
+        color: var(--color-link-contrast-disabled);
+      }
+    }
+
+    &[data-linkType='current'] {
+      text-decoration: none;
+      color: var(--color-current);
+    }
+
+    &[data-linkType='current-contrast'] {
+      text-decoration: underline;
+      color: var(--color-current-up);
+    }
+
+    &[data-linkType='no-color-no-brightness'],
+    &[data-linkType='no-color'] {
+      color: unset;
+      opacity: 0.7;
+    }
+  }
+
+  &:not([disabled]) {
+    &[data-linkType='default'] {
+      text-decoration: none;
+      cursor: pointer;
+
+      color: var(--color-link);
+
+      &:hover {
+        color: var(--color-link-hover);
+      }
+
+      &:active {
+        color: var(--color-link-active);
+      }
+    }
+
+    &[data-linkType='contrast'] {
+      text-decoration: underline;
+
+      color: var(--color-link-contrast);
+
+      &:hover {
+        color: var(--color-link-contrast-hover);
+      }
+
+      &:active {
+        color: var(--color-link-contrast-active);
+      }
+    }
+
+    &[data-linkType='current'] {
+      text-decoration: none;
+      color: var(--color-current);
+      cursor: default;
+    }
+
+    &[data-linkType='current-contrast'] {
+      text-decoration: underline;
+      color: var(--color-current-up);
+      cursor: default;
+    }
+
+    &[data-linkType='no-color'] {
+      text-decoration: unset;
+      color: unset;
+
+      &:hover {
+        filter: brightness(1.2);
+      }
+
+      &:active {
+        filter: brightness(1.4);
+      }
+    }
+
+    &[data-linkType='no-color-no-brightness'] {
+      text-decoration: unset;
+      color: unset;
+    }
+  }
+}

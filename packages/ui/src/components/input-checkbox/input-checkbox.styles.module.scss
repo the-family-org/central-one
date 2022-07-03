@@ -1,0 +1,33 @@
+.container {
+  @import '../../props/margin-left/margin-left';
+  @import '../../props/margin-right/margin-right';
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  appearance: none;
+
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-foreground-strong);
+
+  &:checked {
+    &::after {
+      content: '';
+      width: 22px;
+      height: 13px;
+      margin-top: -4px;
+
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      border: solid;
+      border-width: 0 0 5px 5px;
+      border-top-color: var(--color-foreground-strong);
+    }
+  }
+
+  &:focus {
+    box-shadow: inset 0px 0px 0px 4px var(--color-focus);
+  }
+}

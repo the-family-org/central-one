@@ -1,0 +1,113 @@
+& {
+  $boxShadowProps: 0 0 0 2px inset;
+
+  &[data-statusFgShadow='contrast'] {
+    color: var(--color-contrast);
+    box-shadow: $boxShadowProps var(--color-contrast);
+  }
+
+  &[data-statusFgShadow='primary'] {
+    color: var(--color-primary);
+    box-shadow: $boxShadowProps var(--color-primary);
+  }
+
+  &[data-statusFgShadow='secondary'] {
+    color: var(--color-secondary);
+    box-shadow: $boxShadowProps var(--color-secondary);
+  }
+
+  &[data-statusFgShadow='received'] {
+    color: var(--color-received);
+    box-shadow: $boxShadowProps var(--color-received);
+  }
+
+  &[data-statusFgShadow='neutral'] {
+    color: var(--color-neutral);
+    box-shadow: $boxShadowProps var(--color-neutral);
+  }
+
+  &[data-statusFgShadow='discreet'] {
+    color: var(--color-discreet);
+    box-shadow: $boxShadowProps var(--color-discreet);
+  }
+
+  &[data-statusFgShadow='disabled'] {
+    color: var(--color-disabled);
+    box-shadow: $boxShadowProps var(--color-disabled);
+  }
+
+  &[data-statusFgShadow='inactive'] {
+    color: var(--color-inactive);
+    box-shadow: $boxShadowProps var(--color-inactive);
+  }
+
+  &[data-statusFgShadow='active'] {
+    color: var(--color-active);
+    box-shadow: $boxShadowProps var(--color-active);
+  }
+
+  &[data-statusFgShadow='current'] {
+    color: var(--color-current);
+    box-shadow: $boxShadowProps var(--color-current);
+  }
+
+  &[data-statusFgShadow='new'] {
+    color: var(--color-new);
+    box-shadow: $boxShadowProps var(--color-new);
+  }
+
+  &[data-statusFgShadow='success'] {
+    color: var(--color-success);
+    box-shadow: $boxShadowProps var(--color-success);
+  }
+
+  &[data-statusFgShadow='positive'] {
+    color: var(--color-positive);
+    box-shadow: $boxShadowProps var(--color-positive);
+  }
+
+  &[data-statusFgShadow='pending'] {
+    color: var(--color-pending);
+    box-shadow: $boxShadowProps var(--color-pending);
+  }
+
+  &[data-statusFgShadow='info'] {
+    color: var(--color-info);
+    box-shadow: $boxShadowProps var(--color-info);
+  }
+
+  &[data-statusFgShadow='sent'] {
+    color: var(--color-sent);
+    box-shadow: $boxShadowProps var(--color-sent);
+  }
+
+  &[data-statusFgShadow='emphasis'] {
+    color: var(--color-emphasis);
+    box-shadow: $boxShadowProps var(--color-emphasis);
+  }
+
+  &[data-statusFgShadow='negative'] {
+    color: var(--color-negative);
+    box-shadow: $boxShadowProps var(--color-negative);
+  }
+
+  &[data-statusFgShadow='rejected'] {
+    color: var(--color-rejected);
+    box-shadow: $boxShadowProps var(--color-rejected);
+  }
+
+  &[data-statusFgShadow='error'] {
+    color: var(--color-error);
+    box-shadow: $boxShadowProps var(--color-error);
+  }
+
+  &[data-statusFgShadow='declined'] {
+    color: var(--color-declined);
+    box-shadow: $boxShadowProps var(--color-declined);
+  }
+
+  &[data-statusFgShadow='warning'] {
+    color: var(--color-warning);
+    box-shadow: $boxShadowProps var(--color-warning);
+  }
+}

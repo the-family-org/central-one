@@ -1,0 +1,45 @@
+& {
+  &[data-fontSize='s2'] {
+    font-size: var(--font-size-s2);
+    line-height: var(--font-line-height-s2);
+  }
+
+  &[data-fontSize='s'] {
+    font-size: var(--font-size-s);
+    line-height: var(--font-line-height-s);
+  }
+
+  &[data-fontSize='m'] {
+    font-size: var(--font-size-m);
+    line-height: var(--font-line-height-m);
+  }
+
+  &[data-fontSize='l'] {
+    font-size: var(--font-size-l);
+    line-height: var(--font-line-height-l);
+  }
+
+  &[data-fontSize='l2'] {
+    font-size: var(--font-size-l2);
+    line-height: var(--font-line-height-l2);
+  }
+
+  &[data-fontSize='l3'] {
+    font-size: var(--font-size-l3);
+    line-height: var(--font-line-height-l3);
+  }
+
+  &[data-fontSize='l4'] {
+    font-size: var(--font-size-l4);
+    line-height: var(--font-line-height-l4);
+  }
+
+  &[data-fontSize='l5'] {
+    font-size: var(--font-size-l5);
+    line-height: var(--font-line-height-l5);
+  }
+
+  &[data-fontSize='unset'] {
+    font-size: unset;
+  }
+}

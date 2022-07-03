@@ -1,0 +1,62 @@
+.root-container {
+  @import '../../props/margin-top/margin-top';
+  @import '../../props/margin-bottom/margin-bottom';
+  @import '../../props/status-bg/status-bg';
+  @import '../../props/show/show';
+
+  &[data-show='true'] {
+    display: flex;
+  }
+
+  flex-direction: column;
+}
+
+.spacing-container {
+  display: flex;
+
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+
+  &:not([data-contentSize='full-page']) {
+    max-width: var(--page-max-width);
+
+    .content-container {
+      padding-left: var(--page-left-padding);
+      padding-right: var(--page-right-padding);
+    }
+  }
+
+  // This prop exists but does not need stylization
+  // &[data-contentSize='full-page-content'] {}
+
+  &[data-contentSize='contained-small'] .content-container {
+    max-width: 700px;
+  }
+
+  &[data-contentSize='contained-medium'] .content-container {
+    max-width: 800px;
+  }
+
+  &[data-contentSize='contained-large'] .content-container {
+    max-width: 960px;
+  }
+}
+
+.content-container {
+  @import '../../props/flex-direction/flex-direction';
+  @import '../../props/justify-content/justify-content';
+  @import '../../props/align-items/align-items';
+  @import '../../props/flex-wrap/flex-wrap';
+  @import '../../props/column-gap/column-gap';
+  @import '../../props/row-gap/row-gap';
+  @import '../../props/font-size/font-size';
+  @import '../../props/font-weight/font-weight';
+  @import '../../props/text-align/text-align';
+  @import '../../props/padding-bottom/padding-bottom';
+  @import '../../props/padding-top/padding-top';
+
+  display: flex;
+
+  flex: 1;
+}

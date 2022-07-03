@@ -1,0 +1,19 @@
+.container {
+  @import '../../props/display/display';
+  @import '../../props/flex-direction/flex-direction';
+  @import '../../props/margin-bottom/margin-bottom';
+  @import '../../props/column-gap/column-gap';
+  @import '../../props/row-gap/row-gap';
+  @import '../../props/status-border/status-border';
+
+  padding: 15px;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  border-left-width: 10px;
+  border-style: solid;
+
+  &[data-contentStatus='true'] {
+    @import '../../props/status-fg/status-fg';
+  }
+}

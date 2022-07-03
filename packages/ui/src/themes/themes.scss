@@ -1,0 +1,369 @@
+@font-face {
+  font-family: 'NFW';
+  src: url('/fonts/nfw/nfw-latin-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; // "block" - hide texts until font is loaded
+  unicode-range: U+000-5FF; // "U+000-5FF" - latin glyphs
+}
+
+@font-face {
+  font-family: 'NFW';
+  src: url('/fonts/nfw/nfw-latin-regular-italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: block; // "block" - hide texts until font is loaded
+  unicode-range: U+000-5FF; // "U+000-5FF" - latin glyphs
+}
+
+@font-face {
+  font-family: 'NFW';
+  src: url('/fonts/nfw/nfw-latin-bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: block; // "block" - hide texts until font is loaded
+  unicode-range: U+000-5FF; // "U+000-5FF" - latin glyphs
+}
+
+@font-face {
+  font-family: 'NFW';
+  src: url('/fonts/nfw/nfw-latin-bold-italic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: block; // "block" - hide texts until font is loaded
+  unicode-range: U+000-5FF; // "U+000-5FF" - latin glyphs
+}
+
+@font-face {
+  font-family: 'NFW';
+  src: url('/fonts/nfw/nfw-latin-black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: block; // "block" - hide texts until font is loaded
+  unicode-range: U+000-5FF; // "U+000-5FF" - latin glyphs
+}
+
+@font-face {
+  font-family: 'NFW-fallback';
+  src: local('Arial');
+  size-adjust: 98%;
+  line-gap-override: 70%;
+}
+
+:root {
+  $mediaQueryMedium: 920px;
+  $mediaQuerySmall: 760px;
+
+  --page-max-width: 1200px;
+
+  --page-top-padding: 40px;
+
+  --page-small-left-spacing: 20px;
+  --page-small-right-spacing: 20px;
+  --page-medium-left-spacing: 80px;
+  --page-medium-right-spacing: 80px;
+  --page-big-left-spacing: 150px;
+  --page-big-right-spacing: 150px;
+
+  --page-left-padding: var(--page-medium-left-spacing);
+  --page-right-padding: var(--page-medium-right-spacing);
+  --page-left-margin: var(--page-medium-left-spacing);
+  --page-right-margin: var(--page-medium-right-spacing);
+
+  @media (max-width: $mediaQuerySmall) {
+    --page-left-padding: var(--page-small-left-spacing);
+    --page-right-padding: var(--page-small-right-spacing);
+    --page-left-margin: var(--page-small-left-spacing);
+    --page-right-margin: var(--page-small-right-spacing);
+  }
+
+  --spacing-l5: 100px;
+  --spacing-l4: 80px;
+  --spacing-l3: 60px;
+  --spacing-l2: 40px;
+  --spacing-l: 34px;
+  --spacing-m: 28px;
+  --spacing-s: 14px;
+  --spacing-s2: 8px;
+  --spacing-s3: 6px;
+  --spacing-s4: 4px;
+
+  --gap-l5: 100px;
+  --gap-l4: 80px;
+  --gap-l3: 50px;
+  --gap-l2: 30px;
+  --gap-l: 20px;
+  --gap-m: 14px;
+  --gap-s: 12px;
+  --gap-s2: 10px;
+  --gap-s3: 6px;
+  --gap-s4: 4px;
+
+  --font-size-l5: 2.5rem;
+  --font-size-l4: 1.8rem;
+  --font-size-l3: 1.6rem;
+  --font-size-l2: 1.4rem;
+  --font-size-l: 1.3rem;
+  --font-size-m: 1.2rem;
+  --font-size-s: 0.9rem;
+  --font-size-s2: 0.8rem;
+
+  --font-line-height-l5: 2.9rem;
+  --font-line-height-l4: 2.2rem;
+  --font-line-height-l3: 2rem;
+  --font-line-height-l2: 1.8rem;
+  --font-line-height-l: 1.7rem;
+  --font-line-height-m: 1.6rem;
+  --font-line-height-s: 1.3rem;
+  --font-line-height-s2: 1.2rem;
+
+  --brand-title-size: 1.6rem;
+  --session-title-size: 1.3rem;
+
+  --title-margin-top: 20px;
+  --title-margin-bottom: 20px;
+  --elements-margin-top: 20px;
+  --elements-margin-bottom: 20px;
+
+  --font-family-base: 'NFW', 'NFW-fallback', sans-serif;
+
+  --font-weight-regular: normal;
+  --font-weight-bold: bold;
+  --font-weight-extra-bold: 900;
+
+  --border-radius: none;
+
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+}
+
+:root,
+[data-theme='default'] {
+  --color-foreground: hsl(206, 13%, 11%);
+  --color-foreground-strong: hsl(180, 4%, 5%);
+  --color-foreground-secondary: hsl(207, 10%, 22%);
+  --color-foreground-contrast: hsl(0, 0%, 100%);
+
+  --color-background: hsl(0, 0%, 100%);
+  --color-background-secondary: hsl(30, 8%, 95%);
+  --color-background-strong-contrast: hsl(180, 4%, 5%);
+
+  --color-header-foreground: hsl(0, 0%, 100%);
+  --color-header-background: var(--color-background-strong-contrast);
+
+  --color-border: hsl(204, 3%, 70%);
+  --color-strong-border: hsl(180, 4%, 5%);
+
+  --color-focus: hsl(52, 100%, 50%);
+
+  --color-button-content: hsl(0, 0%, 100%);
+  --color-button-background-up: hsl(147, 63%, 80%);
+  --color-button-background: hsl(147, 100%, 25%);
+  --color-button-border: hsl(147, 100%, 11%);
+  --color-button-border-contrast: hsl(0, 0%, 60%);
+
+  --color-button-content-disabled: hsl(0, 0%, 96%);
+  --color-button-background-disabled: hsl(0, 0%, 65%);
+  --color-button-border-disabled: hsl(0, 0%, 50%);
+
+  --color-link: hsl(208, 73%, 42%);
+  --color-link-hover: hsl(216, 100%, 24%);
+  --color-link-active: hsl(203, 100%, 28%);
+  --color-link-disabled: hsl(0, 0%, 45%);
+
+  --color-link-contrast: var(--color-foreground-contrast);
+  --color-link-contrast-hover: hsl(180, 12%, 79%);
+  --color-link-contrast-active: hsl(180, 29%, 74%);
+  --color-link-contrast-disabled: hsl(0, 0%, 83%);
+
+  --color-contrast-up: var(--color-foreground);
+  --color-contrast: var(--color-background);
+  --color-contrast-down: var(--color-background-secondary);
+
+  --color-primary-up: hsl(209, 53%, 88%);
+  --color-primary: hsl(208, 73%, 42%);
+  --color-primary-down: hsl(208, 73%, 22%);
+
+  --color-secondary-up: hsl(258, 31%, 87%);
+  --color-secondary: hsl(259, 54%, 30%);
+  --color-secondary-down: hsl(259, 54%, 10%);
+
+  --color-received-up: hsl(258, 31%, 87%);
+  --color-received: hsl(259, 54%, 30%);
+  --color-received-down: hsl(259, 54%, 10%);
+
+  --color-info-up: hsl(209, 53%, 88%);
+  --color-info: hsl(208, 73%, 29%);
+  --color-info: hsl(208, 73%, 9%);
+
+  --color-pending-up: hsl(209, 53%, 88%);
+  --color-pending: hsl(208, 73%, 29%);
+  --color-pending-down: hsl(208, 73%, 9%);
+
+  --color-neutral-up: hsl(0, 0%, 91%);
+  --color-neutral: hsl(200, 9%, 34%);
+  --color-neutral-down: hsl(200, 9%, 14%);
+
+  --color-discreet-up: hsl(0, 0%, 91%);
+  --color-discreet: hsl(210, 3%, 42%);
+  --color-discreet-down: hsl(210, 7%, 21%);
+
+  --color-disabled-up: hsl(180, 3%, 94%);
+  --color-disabled: hsl(204, 3%, 70%);
+  --color-disabled-down: hsl(204, 3%, 50%);
+
+  --color-inactive-up: hsl(180, 3%, 94%);
+  --color-inactive: hsl(204, 3%, 70%);
+  --color-inactive-down: hsl(204, 3%, 50%);
+
+  --color-emphasis-up: hsl(332, 67%, 91%);
+  --color-emphasis: hsl(333, 58%, 32%);
+  --color-emphasis-down: hsl(333, 58%, 12%);
+
+  --color-sent-up: hsl(332, 67%, 91%);
+  --color-sent: hsl(333, 58%, 32%);
+  --color-sent-down: hsl(333, 58%, 12%);
+
+  --color-active-up: hsl(175, 39%, 82%);
+  --color-active: hsl(175, 60%, 16%);
+  --color-active-down: hsl(175, 60%, 6%);
+
+  --color-current-up: hsl(175, 39%, 82%);
+  --color-current: hsl(175, 60%, 16%);
+  --color-current-down: hsl(175, 60%, 6%);
+
+  --color-new-up: hsl(153, 27%, 84%);
+  --color-new: hsl(152, 100%, 18%);
+  --color-new-down: hsl(152, 100%, 6%);
+
+  --color-success-up: hsl(153, 27%, 84%);
+  --color-success: hsl(152, 100%, 18%);
+  --color-success-down: hsl(152, 100%, 6%);
+
+  --color-positive-up: hsl(153, 27%, 84%);
+  --color-positive: hsl(152, 100%, 18%);
+  --color-positive-down: hsl(152, 100%, 6%);
+
+  --color-negative-up: hsl(8, 67%, 89%);
+  --color-negative: hsl(8, 76%, 33%);
+  --color-negative-down: hsl(8, 76%, 13%);
+
+  --color-error-up: hsl(8, 67%, 89%);
+  --color-error: hsl(8, 76%, 33%);
+  --color-error-down: hsl(8, 76%, 13%);
+
+  --color-rejected-up: hsl(8, 67%, 89%);
+  --color-rejected: hsl(8, 76%, 33%);
+  --color-rejected-down: hsl(8, 76%, 13%);
+
+  --color-declined-up: hsl(20, 90%, 88%);
+  --color-declined: hsl(20, 63%, 26%);
+  --color-declined-down: hsl(20, 63%, 6%);
+
+  --color-warning-up: hsl(53, 100%, 87%);
+  --color-warning: hsl(52, 100%, 17%);
+  --color-warning-down: hsl(52, 100%, 7%);
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: #e9e9e9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #71a3e4;
+  }
+}
+
+[data-theme='light-potato'] {
+  --color-primary-up: hsl(17 89% 93%);
+  --color-primary: hsl(18, 55%, 50%);
+  --color-primary-down: hsl(18, 57%, 13%);
+
+  --color-button-background-up: hsl(64, 77%, 83%);
+  --color-button-background: hsl(49, 100%, 25%);
+  --color-button-border: hsl(61, 100%, 11%);
+
+  --color-link: hsl(18 50% 42%);
+  --color-link-hover: hsl(18 50% 22%);
+  --color-link-active: hsl(18 50% 52%);
+
+  --color-link-contrast-hover: hsl(65, 12%, 79%);
+  --color-link-contrast-active: hsl(71, 29%, 74%);
+
+  ::-webkit-scrollbar-thumb {
+    background: #e4b671;
+  }
+}
+
+[data-theme='light-reptilian'] {
+  --color-primary-up: hsl(88, 89%, 93%);
+  --color-primary: hsl(91, 66%, 37%);
+  --color-primary-down: hsl(96, 58%, 13%);
+
+  --color-button-background-up: hsl(81, 77%, 83%);
+  --color-button-background: hsl(81, 100%, 25%);
+  --color-button-border: hsl(93, 100%, 11%);
+
+  --color-link: hsl(78, 54%, 34%);
+  --color-link-hover: hsl(76, 50%, 22%);
+  --color-link-active: hsl(76, 50%, 52%);
+
+  --color-link-contrast-hover: hsl(65, 12%, 79%);
+  --color-link-contrast-active: hsl(71, 29%, 74%);
+
+  ::-webkit-scrollbar-thumb {
+    background: #71e48e;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app-content {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  font-family: var(--font-family-base);
+}
+
+body {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-regular);
+
+  color: var(--color-foreground);
+  background: var(--color-background);
+}
+
+pre,
+code {
+  font-family: monospace;
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-extra-bold);
+}
+
+a,
+button,
+select,
+input[type='checkbox'],
+input[type='radio'],
+input[type='file'],
+input[type='submit'],
+input[type='reset'],
+input[type='color'],
+input[type='range'] {
+  cursor: pointer;
+}

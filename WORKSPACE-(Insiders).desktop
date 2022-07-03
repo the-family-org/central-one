@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=WORKSPACE - VSCode Insiders
+Exec=code-insiders .vscode/central.code-workspace
+Icon=visual-studio-code-insiders
+Terminal=false

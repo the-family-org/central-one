@@ -1,0 +1,36 @@
+.container {
+  @import '../../props/font-size-with-line-height/font-size-with-line-height';
+  @import '../../props/font-weight/font-weight';
+  @import '../../props/text-align/text-align';
+  @import '../../props/margin-top/margin-top';
+  @import '../../props/margin-bottom/margin-bottom';
+
+  &[data-strong='true'] {
+    color: var(--color-foreground-strong);
+  }
+}
+
+@media (max-width: 920px) {
+  .container {
+    &[data-adaptiveSize='true'] {
+      &[data-fontSize='l5'],
+      &[data-fontSize='l4'] {
+        font-size: var(--font-size-l3);
+        line-height: var(--font-line-height-l3);
+      }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    &[data-adaptiveSize='true'] {
+      &[data-fontSize='l5'],
+      &[data-fontSize='l4'],
+      &[data-fontSize='l3'] {
+        font-size: var(--font-size-l2);
+        line-height: var(--font-line-height-l2);
+      }
+    }
+  }
+}

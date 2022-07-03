@@ -1,0 +1,17 @@
+& {
+  &[data-fontWeight='extra-bold'] {
+    font-weight: var(--font-weight-extra-bold);
+  }
+
+  &[data-fontWeight='bold'] {
+    font-weight: var(--font-weight-bold);
+  }
+
+  &[data-fontWeight='regular'] {
+    font-weight: var(--font-weight-regular);
+  }
+
+  &[data-fontWeight='unset'] {
+    font-weight: unset;
+  }
+}

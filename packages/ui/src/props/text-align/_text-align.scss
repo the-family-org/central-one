@@ -1,0 +1,21 @@
+& {
+  &[data-textAlign='left'] {
+    text-align: left;
+  }
+
+  &[data-textAlign='right'] {
+    text-align: right;
+  }
+
+  &[data-textAlign='center'] {
+    text-align: center;
+  }
+
+  &[data-textAlign='justify'] {
+    text-align: justify;
+  }
+
+  &[data-textAlign='unset'] {
+    text-align: unset;
+  }
+}

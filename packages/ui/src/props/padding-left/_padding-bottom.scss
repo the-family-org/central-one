@@ -1,0 +1,49 @@
+& {
+  &[data-paddingLeft='s4'] {
+    padding-left: var(--spacing-s4);
+  }
+
+  &[data-paddingLeft='s3'] {
+    padding-left: var(--spacing-s3);
+  }
+
+  &[data-paddingLeft='s2'] {
+    padding-left: var(--spacing-s2);
+  }
+
+  &[data-paddingLeft='s'] {
+    padding-left: var(--spacing-s);
+  }
+
+  &[data-paddingLeft='m'] {
+    padding-left: var(--spacing-m);
+  }
+
+  &[data-paddingLeft='l'] {
+    padding-left: var(--spacing-l);
+  }
+
+  &[data-paddingLeft='l2'] {
+    padding-left: var(--spacing-l2);
+  }
+
+  &[data-paddingLeft='l3'] {
+    padding-left: var(--spacing-l3);
+  }
+
+  &[data-paddingLeft='l4'] {
+    padding-left: var(--spacing-l4);
+  }
+
+  &[data-paddingLeft='l5'] {
+    padding-left: var(--spacing-l5);
+  }
+
+  &[data-paddingLeft='unset'] {
+    padding-left: unset;
+  }
+
+  &[data-paddingLeft='none'] {
+    padding-left: 0;
+  }
+}

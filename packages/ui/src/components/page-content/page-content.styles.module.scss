@@ -1,0 +1,24 @@
+.container {
+  @import '../../props/column-gap/column-gap';
+  @import '../../props/flex-direction/flex-direction';
+  @import '../../props/flex-wrap/flex-wrap';
+  @import '../../props/justify-content/justify-content';
+  @import '../../props/row-gap/row-gap';
+  @import '../../props/text-align/text-align';
+
+  display: flex;
+
+  &[data-pageSize='true'] {
+    flex: 1;
+    max-width: var(--page-max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 0;
+    padding-left: var(--page-left-padding);
+    padding-right: var(--page-right-padding);
+  }
+
+  &[data-pageTopPaddingSize='true'] {
+    padding-top: var(--page-top-padding);
+  }
+}

@@ -1,0 +1,56 @@
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+    "importsNotUsedAsValues": "remove",
+    "baseUrl": ".",
+    "paths": {
+      "$modules": [
+        "src/modules"
+      ],
+      "$modules/*": [
+        "src/modules/*"
+      ],
+      "$shared": [
+        "src/shared"
+      ],
+      "$shared/*": [
+        "src/shared/*"
+      ],
+      "$utils": [
+        "src/shared/utils"
+      ],
+      "$utils/*": [
+        "src/shared/utils/*"
+      ],
+      "$components/*": [
+        "src/shared/components/*"
+      ],
+      "$icons": [
+        "src/shared/icons"
+      ],
+      "$lang": [
+        "src/shared/i18n"
+      ],
+      "$lang/*": [
+        "src/shared/i18n/*"
+      ],
+      "$config": [
+        "src/shared/config"
+      ],
+      "$stores": [
+        "src/shared/stores"
+      ],
+      "$types": [
+        "src/shared/types"
+      ],
+    }
+	}
+}

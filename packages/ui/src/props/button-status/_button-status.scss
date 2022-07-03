@@ -1,0 +1,48 @@
+& {
+  &[disabled] {
+    cursor: not-allowed;
+    color: var(--color-button-content-disabled);
+    background-color: var(--color-button-background-disabled);
+    border-color: var(--color-button-border-disabled);
+  }
+
+  &:not([disabled]) {
+    cursor: pointer;
+
+    &[data-buttonStatus='default'] {
+      color: var(--color-button-content);
+      background-color: var(--color-button-background);
+      border-color: var(--color-button-border);
+    }
+
+    &[data-buttonStatus='default-contrast'] {
+      color: var(--color-button-background);
+      background-color: var(--color-button-content);
+      border-color: var(--color-button-border-contrast);
+    }
+
+    &[data-buttonStatus='neutral'] {
+      color: var(--color-button-content);
+      background-color: var(--color-neutral);
+      border-color: var(--color-neutral-down);
+    }
+
+    &[data-buttonStatus='neutral-contrast'] {
+      color: var(--color-neutral);
+      background-color: var(--color-button-content);
+      border-color: var(--color-button-border-contrast);
+    }
+
+    &[data-buttonStatus='negative'] {
+      color: var(--color-button-content);
+      background-color: var(--color-negative);
+      border-color: var(--color-negative-down);
+    }
+
+    &[data-buttonStatus='negative-contrast'] {
+      color: var(--color-negative);
+      background-color: var(--color-button-content);
+      border-color: var(--color-button-border-contrast);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.container {
+  @import '../../props/status-fg-bg/status-fg-bg';
+  @import '../../props/margin-left/margin-left';
+  @import '../../props/margin-right/margin-right';
+
+  display: inline-flex;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 var(--spacing-s2);
+  gap: var(--gap-s3);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

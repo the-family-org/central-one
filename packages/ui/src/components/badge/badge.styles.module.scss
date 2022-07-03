@@ -1,0 +1,16 @@
+.container {
+  @import '../../props/status-fg-shadow/status-fg-shadow';
+  @import '../../props/margin-left/margin-left';
+  @import '../../props/margin-right/margin-right';
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+
+  padding: 0 var(--spacing-s2);
+  gap: var(--gap-s3);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}

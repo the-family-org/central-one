@@ -1,0 +1,9 @@
+.container {
+  @import '../../props/flex-direction/flex-direction';
+  @import '../../props/flex-wrap/flex-wrap';
+  @import '../../props/justify-content/justify-content';
+  @import '../../props/column-gap/column-gap';
+  @import '../../props/row-gap/row-gap';
+
+  display: flex;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "central",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "first-install:dev": "chmod +x ./others/scripts/*.sh && ./others/scripts/first-install.sh",
+    "api:start:dev": "lerna run --stream --no-prefix --scope=@central/api start:dev",
+    "web:start:dev": "lerna run --stream --no-prefix --scope=@central/web start:dev",
+    "version:update": "lerna version --no-push --no-git-tag-version --no-push-tag",
+    "bootstrap": "lerna bootstrap",
+    "test": "lerna run test",
+    "diff": "lerna diff"
+  },
+  "devDependencies": {
+    "lerna": "^5.1.0"
+  }
+}

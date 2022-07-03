@@ -1,0 +1,17 @@
+& {
+  &[data-flexWrap='wrap'] {
+    flex-wrap: wrap;
+  }
+
+  &[data-flexWrap='wrap-reverse'] {
+    flex-wrap: wrap-reverse;
+  }
+
+  &[data-flexWrap='nowrap'] {
+    flex-wrap: nowrap;
+  }
+
+  &[data-flexWrap='unset'] {
+    flex-wrap: unset;
+  }
+}
