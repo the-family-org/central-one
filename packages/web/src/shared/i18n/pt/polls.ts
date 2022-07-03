@@ -9,7 +9,7 @@ export const polls: Translation['polls'] = {
   exampleTwo: {
     title: 'O filho da Jane e do John será menino ou menina?',
     message:
-      'Criei essa pesquisa para que você tente adivinhar se o filho meu e do John será menino ou menina. Todos que responderem corretamente ganharam um prêmio.',
+      'Criei essa pesquisa para que você tente adivinhar se o filho meu e do John será menino ou menina. Todos que responderem corretamente ganharão um prêmio.',
   },
   polls: 'Pesquisas',
   pollManagement: 'Gerenciar pesquisa',
