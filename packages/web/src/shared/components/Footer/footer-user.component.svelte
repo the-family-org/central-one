@@ -40,7 +40,7 @@
 
     <li>
       {$LL.account.account()}: <Link
-        href={'/' + $locale + Path.USER_SETTINGS + '#account-type'}
+        href={'/' + $locale + Path.USER_SETTINGS + '?section=account'}
         >{$LL.account.accountType.normalMember()}</Link
       >
     </li>

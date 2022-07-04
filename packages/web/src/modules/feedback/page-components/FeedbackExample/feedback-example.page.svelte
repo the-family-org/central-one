@@ -124,7 +124,7 @@
 <Footer marginTop={false} />
 
 <style lang="scss">
-  $padding: var(--spacing-l);
+  $padding: var(--spacing-s);
 
   .feedback {
     display: flex;

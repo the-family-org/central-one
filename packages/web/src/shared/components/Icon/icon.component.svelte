@@ -14,9 +14,11 @@
 
     min-width: 1em;
     min-height: 1em;
+    height: min-content;
+    width: min-content;
 
     &[data-status='unset'] {
-      color: 'unset';
+      color: unset;
     }
 
     &[data-status='primary'] {

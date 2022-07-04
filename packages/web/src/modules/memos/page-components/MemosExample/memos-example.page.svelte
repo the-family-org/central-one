@@ -13,7 +13,9 @@
   let showHeaderAndFooter = false;
 
   const goToEnd = () => {
-    window.location = '#end' as unknown as Location;
+    setTimeout(() => {
+      window.location = '#end' as unknown as Location;
+    }, 200);
   };
 </script>
 
@@ -48,7 +50,7 @@
     </div>
 
     <div class="memo-body">
-      <div class="memo-date">{$LL.memos.exampleOne.publishedOn()}</div>
+      <div class="memo-date"><i>{$LL.memos.exampleOne.publishedOn()}</i></div>
 
       <TitleH1 strong marginBottom="m">{$LL.memos.exampleOne.title()}</TitleH1>
 
@@ -129,7 +131,7 @@
       align-self: center;
 
       width: 80px;
-      font-size: var(--font-size-s);
+      font-size: var(--font-size-m);
       font-weight: var(--font-weight-bold);
       border: 1px solid var(--color-border);
 
@@ -151,6 +153,10 @@
         filter: brightness(0.93);
       }
     }
+  }
+
+  .header-container {
+    border-bottom: 1px solid var(--color-border);
   }
 
   .header-container,
@@ -210,11 +216,12 @@
 
     margin-bottom: var(--spacing-s);
     font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-s);
   }
 
   .nav-links {
     max-width: $contentMaxWidth;
-    width: -moz-fill-available;
+    width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
     margin: 0 auto;

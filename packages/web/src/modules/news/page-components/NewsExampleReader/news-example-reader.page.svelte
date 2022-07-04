@@ -236,53 +236,41 @@
             <hr />
 
             <div class="row">
-              <div>
-                <p>
-                  {@html $LL.news.newsReader.example1.part1()}
-                </p>
-              </div>
+              <p>
+                {@html $LL.news.newsReader.example1.part1()}
+              </p>
 
-              <div>
-                <p>
-                  {@html $LL.news.newsReader.example1.part2A()}
-                  <!-- svelte-ignore a11y-invalid-attribute -->
-                  <b
-                    ><a
-                      href="https://harrypotter.fandom.com/wiki/Daily_Prophet"
-                      target="”_blank”">The Daily Prophet</a
-                    ></b
-                  >
-                  {$LL.news.newsReader.example1.part2B()}
-                </p>
-              </div>
+              <p>
+                {@html $LL.news.newsReader.example1.part2A()}
+                <!-- svelte-ignore a11y-invalid-attribute -->
+                <b
+                  ><a
+                    href="https://harrypotter.fandom.com/wiki/Daily_Prophet"
+                    target="”_blank”">The Daily Prophet</a
+                  ></b
+                >
+                {$LL.news.newsReader.example1.part2B()}
+              </p>
 
-              <div>
-                <p>
-                  {@html $LL.news.newsReader.example1.part3()}
-                </p>
-              </div>
+              <p>
+                {@html $LL.news.newsReader.example1.part3()}
+              </p>
             </div>
 
             <hr class="small" />
 
             <div class="row">
-              <div>
-                <p>
-                  {@html $LL.news.newsReader.example1.part4()}
-                </p>
-              </div>
+              <p>
+                {@html $LL.news.newsReader.example1.part4()}
+              </p>
 
-              <div>
-                <p>
-                  {@html $LL.news.newsReader.example1.part5()}
-                </p>
-              </div>
+              <p>
+                {@html $LL.news.newsReader.example1.part5()}
+              </p>
 
-              <div>
-                <p>
-                  {@html $LL.news.newsReader.example1.part6()}
-                </p>
-              </div>
+              <p>
+                {@html $LL.news.newsReader.example1.part6()}
+              </p>
             </div>
           </div>
         </div>
@@ -439,6 +427,8 @@
     }
 
     background: $firstBg;
+
+    scrollbar-color: $scrollbarThumb $scrollbarBg;
   }
 
   .newspaper-container {
@@ -529,7 +519,7 @@
 
     padding-bottom: 10px;
     line-height: 78px;
-    font-size: 71px;
+    font-size: 68px;
     letter-spacing: 1px;
   }
 
