@@ -2,18 +2,22 @@
   import { LL, locale } from '$lang/i18n-svelte';
   import { env, ExamplePath, Path } from '$config';
 
+  import { FullscreenModal } from '$components/FullscreenModal';
   import { Line } from '$components/Line';
   import { Link } from '$components/Link';
+  import { LinkButton } from '$components/LinkButton';
   import { List } from '$components/List';
   import { ListItem } from '$components/ListItem';
+  import { Paragraph } from '$components/Paragraph';
+  import { Tag } from '$components/Tag';
   import { TitleH1 } from '$components/TitleH1';
   import { TitleH3 } from '$components/TitleH3';
-  import { LinkButton } from '$components/LinkButton';
 
   import { OpenNewsModal } from '../OpenNewsModal';
 
   let existingNewsStatus = false;
   let nonExistingNewsStatus = false;
+  let openExternalLinkStatus = false;
 
   const handleExistingNews = () => {
     existingNewsStatus = !existingNewsStatus;
@@ -22,14 +26,18 @@
   const handleNonExistingNews = () => {
     nonExistingNewsStatus = !nonExistingNewsStatus;
   };
+
+  const handleExternalLink = () => {
+    openExternalLinkStatus = !openExternalLinkStatus;
+  };
 </script>
 
 <div class="main-container">
   <TitleH1 strong marginBottom="s">
     {$LL.news.newsFrom()}
-    <Link href={'/' + $locale + ExamplePath.NEWS_EXAMPLE_READER}>
+    <LinkButton on:click={handleExternalLink}>
       {env.newsJournalFullName}
-    </Link>
+    </LinkButton>
   </TitleH1>
 
   <List marginBottom="l3">
@@ -117,6 +125,34 @@
   handleExistingExample={handleExistingNews}
   handleNonExistingExample={handleNonExistingNews}
 />
+
+<FullscreenModal
+  handleOpenAndClose={handleExternalLink}
+  openStatus={openExternalLinkStatus}
+>
+  <Paragraph fontSize="l" marginBottom="m">
+    {$LL.common.openingExternalWebsite()}
+  </Paragraph>
+
+  <List rowGap="l2">
+    <ListItem>
+      <Link
+        href={'/' + $locale + ExamplePath.NEWS_EXAMPLE_READER}
+        style="padding-right: 4px"
+      >
+        {$LL.common.openTheWebsite()}
+      </Link>
+
+      <Tag status="neutral">{$LL.common.nonResponsive2()}</Tag>
+    </ListItem>
+
+    <ListItem>
+      <LinkButton on:click={handleExternalLink}>
+        {$LL.common.doNotOpen()}
+      </LinkButton>
+    </ListItem>
+  </List>
+</FullscreenModal>
 
 <style lang="scss">
   .main-container {

@@ -12,6 +12,15 @@
   import { Paragraph } from '$components/Paragraph';
   import { TitleH1 } from '$components/TitleH1';
   import { TitleH3 } from '$components/TitleH3';
+  import { Tag } from '$components/Tag';
+  import { FullscreenModal } from '$components/FullscreenModal';
+  import { LinkButton } from '$components/LinkButton';
+
+  let openExternalLinkStatus = false;
+
+  const handleExternalLink = () => {
+    openExternalLinkStatus = !openExternalLinkStatus;
+  };
 </script>
 
 <Header sessionTitle={$LL.news.news()} />
@@ -91,10 +100,10 @@
 
     <List listType="disc">
       <ListItem>
-        <Link href={'/' + $locale + ExamplePath.NEWS_EXAMPLE_READER}>
+        <LinkButton on:click={handleExternalLink}>
           {$LL.news.readThisNewsAt()}
           {env.newsJournalFullName}
-        </Link>
+        </LinkButton>
       </ListItem>
 
       <ListItem>
@@ -117,6 +126,34 @@
     </List>
   </div>
 </PageContent>
+
+<FullscreenModal
+  handleOpenAndClose={handleExternalLink}
+  openStatus={openExternalLinkStatus}
+>
+  <Paragraph fontSize="l" marginBottom="m">
+    {$LL.common.openingExternalWebsite()}
+  </Paragraph>
+
+  <List rowGap="l2">
+    <ListItem>
+      <Link
+        href={'/' + $locale + ExamplePath.NEWS_EXAMPLE_READER}
+        style="padding-right: 4px"
+      >
+        {$LL.common.openTheWebsite()}
+      </Link>
+
+      <Tag status="neutral">{$LL.common.nonResponsive2()}</Tag>
+    </ListItem>
+
+    <ListItem>
+      <LinkButton on:click={handleExternalLink}>
+        {$LL.common.doNotOpen()}
+      </LinkButton>
+    </ListItem>
+  </List>
+</FullscreenModal>
 
 <Footer />
 

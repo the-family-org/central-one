@@ -4,16 +4,25 @@
   import { confettiEffect } from '$shared/effects/confettiEffect';
 
   import { Footer } from '$components/Footer';
+  import { FullscreenModal } from '$components/FullscreenModal';
   import { Header } from '$components/Header';
   import { Line } from '$components/Line';
   import { Link } from '$components/Link';
+  import { LinkButton } from '$components/LinkButton';
   import { List } from '$components/List';
   import { ListItem } from '$components/ListItem';
   import { PageContent } from '$components/PageContent';
   import { Paragraph } from '$components/Paragraph';
   import { Surface } from '$components/Surface';
+  import { Tag } from '$components/Tag';
   import { TitleH1 } from '$components/TitleH1';
   import { TitleH3 } from '$components/TitleH3';
+
+  let openExternalLinkStatus = false;
+
+  const handleExternalLink = () => {
+    openExternalLinkStatus = !openExternalLinkStatus;
+  };
 
   confettiEffect('fireworks');
 </script>
@@ -49,10 +58,10 @@
       </ListItem>
 
       <ListItem>
-        <Link href={'/' + $locale + ExamplePath.NEWS_EXAMPLE_READER}>
+        <LinkButton on:click={handleExternalLink}>
           {$LL.news.goTo()}
           {env.newsJournalFullName}
-        </Link>
+        </LinkButton>
       </ListItem>
 
       <ListItem>
@@ -63,6 +72,34 @@
     </List>
   </div>
 </PageContent>
+
+<FullscreenModal
+  handleOpenAndClose={handleExternalLink}
+  openStatus={openExternalLinkStatus}
+>
+  <Paragraph fontSize="l" marginBottom="m">
+    {$LL.common.openingExternalWebsite()}
+  </Paragraph>
+
+  <List rowGap="l2">
+    <ListItem>
+      <Link
+        href={'/' + $locale + ExamplePath.NEWS_EXAMPLE_READER}
+        style="padding-right: 4px"
+      >
+        {$LL.common.openTheWebsite()}
+      </Link>
+
+      <Tag status="neutral">{$LL.common.nonResponsive2()}</Tag>
+    </ListItem>
+
+    <ListItem>
+      <LinkButton on:click={handleExternalLink}>
+        {$LL.common.doNotOpen()}
+      </LinkButton>
+    </ListItem>
+  </List>
+</FullscreenModal>
 
 <Footer />
 
