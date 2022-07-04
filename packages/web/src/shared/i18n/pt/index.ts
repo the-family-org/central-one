@@ -35,6 +35,10 @@ const pt: Translation = {
     usefulLinks: 'Links úteis',
     top: 'Topo',
     nonResponsive: 'Não responsivo',
+    nonResponsive2: 'Não é mobile friendly',
+    openingExternalWebsite: 'Você está abrindo um link para um site externo',
+    openTheWebsite: 'Abrir o site',
+    doNotOpen: 'Não abrir',
     warningMessage: 'Este site, por hora, é apenas um exemplo de layout.',
     warningMessage2:
       'Obs: O site é apenas um exemplo de layout, não é possível alterar os dados.',

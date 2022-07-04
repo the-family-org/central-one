@@ -35,6 +35,10 @@ const en: BaseTranslation = {
     usefulLinks: 'Useful links',
     top: 'Top',
     nonResponsive: 'Non responsive',
+    nonResponsive2: "It's not mobile friendly",
+    openingExternalWebsite: 'You are opening a link to an external website',
+    openTheWebsite: 'Open the website',
+    doNotOpen: 'Do not open',
     warningMessage: 'This site, for now, is just a layout example.',
     warningMessage2:
       'Note: The site is just a layout example, it is not possible to change the data.',

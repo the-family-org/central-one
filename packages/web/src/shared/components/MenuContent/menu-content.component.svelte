@@ -2,10 +2,20 @@
   import { LL, locale } from '$lang/i18n-svelte';
   import { env, ExamplePath, Path } from '$config';
 
+  import { FullscreenModal } from '../FullscreenModal';
   import { Link } from '../Link';
-  import { ListGroup } from '../ListGroup';
+  import { LinkButton } from '../LinkButton';
   import { List } from '../List';
+  import { ListGroup } from '../ListGroup';
   import { ListItem } from '../ListItem';
+  import { Paragraph } from '../Paragraph';
+  import { Tag } from '../Tag';
+
+  let openExternalLinkStatus = false;
+
+  const handleExternalLink = () => {
+    openExternalLinkStatus = !openExternalLinkStatus;
+  };
 </script>
 
 <slot />
@@ -33,9 +43,9 @@
 
   <List style="min-width: 180px;">
     <ListItem>
-      <Link href={'/' + $locale + ExamplePath.NEWS_EXAMPLE_READER}>
+      <LinkButton on:click={handleExternalLink}>
         {env.newsJournalFullName}
-      </Link>
+      </LinkButton>
     </ListItem>
 
     <ListItem>
@@ -81,3 +91,31 @@
     </ListItem>
   </List>
 </ListGroup>
+
+<FullscreenModal
+  handleOpenAndClose={handleExternalLink}
+  openStatus={openExternalLinkStatus}
+>
+  <Paragraph fontSize="l" marginBottom="m">
+    {$LL.common.openingExternalWebsite()}
+  </Paragraph>
+
+  <List rowGap="l2">
+    <ListItem>
+      <Link
+        href={'/' + $locale + ExamplePath.NEWS_EXAMPLE_READER}
+        style="padding-right: 4px"
+      >
+        {$LL.common.openTheWebsite()}
+      </Link>
+
+      <Tag status="neutral">{$LL.common.nonResponsive2()}</Tag>
+    </ListItem>
+
+    <ListItem>
+      <LinkButton on:click={handleExternalLink}>
+        {$LL.common.doNotOpen()}
+      </LinkButton>
+    </ListItem>
+  </List>
+</FullscreenModal>

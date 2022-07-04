@@ -92,6 +92,22 @@ type RootTranslation = {
 		 */
 		nonResponsive: string
 		/**
+		 * It's not mobile friendly
+		 */
+		nonResponsive2: string
+		/**
+		 * You are opening a link to an external website
+		 */
+		openingExternalWebsite: string
+		/**
+		 * Open the website
+		 */
+		openTheWebsite: string
+		/**
+		 * Do not open
+		 */
+		doNotOpen: string
+		/**
 		 * This site, for now, is just a layout example.
 		 */
 		warningMessage: string
@@ -1948,6 +1964,22 @@ export type TranslationFunctions = {
 		 * Non responsive
 		 */
 		nonResponsive: () => LocalizedString
+		/**
+		 * It's not mobile friendly
+		 */
+		nonResponsive2: () => LocalizedString
+		/**
+		 * You are opening a link to an external website
+		 */
+		openingExternalWebsite: () => LocalizedString
+		/**
+		 * Open the website
+		 */
+		openTheWebsite: () => LocalizedString
+		/**
+		 * Do not open
+		 */
+		doNotOpen: () => LocalizedString
 		/**
 		 * This site, for now, is just a layout example.
 		 */
