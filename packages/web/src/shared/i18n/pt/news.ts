@@ -45,7 +45,7 @@ export const news: Translation['news'] = {
   nextEdition: 'Próxima edição',
   nextEditionDate: '<b>5 de julho</b> de 2022',
   periodicity: 'Periodicidade',
-  periodicityValue: 'A cada 40 days',
+  periodicityValue: 'A cada 40 dias',
   noNewsScheduled: 'Você <b>não</b> possui notícia agendada',
   edition: 'Edição',
   createNewDraft: 'Criar nova notícia/rascunho',

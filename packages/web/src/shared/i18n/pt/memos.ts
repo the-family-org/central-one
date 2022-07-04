@@ -1,7 +1,7 @@
 import type { Translation } from '../i18n-types';
 
 export const memos: Translation['memos'] = {
-  memos: 'Memorando',
+  memos: 'Memorandos',
   memorandum: 'Memorandum',
   exampleOne: {
     date: '18.jun.2022',
@@ -31,8 +31,8 @@ export const memos: Translation['memos'] = {
   memoManagementMessage:
     'Um memorando é um registro e comunicado prático, no formato de texto, sobre algum assunto relevante. Aqui nessa seção é possível criar memorandos para enviar à todos os membros da plataforma, e também, se faz possível ler memorandos anteriormente enviados.',
   createMemo: 'Criar memorando',
-  showAllMemos: 'Mostrar todos os memorandos',
-  showRecentMemos: 'Mostrar apenas memorandos recentes',
+  showAllMemos: 'Ver todos os memorandos',
+  showRecentMemos: 'Ver apenas memorandos recentes',
   allMemos: 'Todos os memorandos',
   recentMemos: 'Memorandos recentes',
   memoCreated: 'Memorando criado 🎉',
