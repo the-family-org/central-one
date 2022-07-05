@@ -5,40 +5,41 @@
 
   import { Button } from '$components/Button';
   import { Footer } from '$components/Footer';
+  import { FormUserTypesWithAccess } from '$components/FormUserTypesWithAccess';
   import { Header } from '$components/Header';
+  import { LeftBorderDiv } from '$components/LeftBorderDiv';
   import { Line } from '$components/Line';
   import { PageContent } from '$components/PageContent';
+  import { TextInput } from '$components/TextInput';
   import { TitleH1 } from '$components/TitleH1';
   import { TitleH2 } from '$components/TitleH2';
   import { WarningDiv } from '$components/WarningDiv';
-  import { LeftBorderDiv } from '$components/LeftBorderDiv';
-  import { TextInput } from '$components/TextInput';
 </script>
 
 <Header sessionTitle={$LL.polls.polls()} />
 <Line />
 
-<PageContent rowGap="l3">
+<PageContent rowGap="l4">
   <div class="page-group-container">
     <TitleH1 strong marginTop="m" marginBottom="l">
       {$LL.polls.createPoll()}
     </TitleH1>
-
-    <WarningDiv marginBottom="m">
-      {$LL.common.warningMessage5()}
-    </WarningDiv>
   </div>
 
   <div class="page-group-container">
-    <TitleH2>{$LL.polls.pollTitle()}</TitleH2>
+    <TitleH2 strong>{$LL.polls.pollTitle()}</TitleH2>
 
     <TextInput value="" />
   </div>
 
   <div class="page-group-container">
-    <TitleH2>{$LL.polls.question()}</TitleH2>
+    <TitleH2 strong>{$LL.polls.question()}</TitleH2>
 
     <TextInput value="" />
+  </div>
+
+  <div class="page-group-container">
+    <FormUserTypesWithAccess />
   </div>
 
   <div class="page-group-container">

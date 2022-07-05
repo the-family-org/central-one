@@ -1,12 +1,13 @@
 <script lang="ts">
   import { LL, locale } from '$lang/i18n-svelte';
+  import { Path } from '$config';
+
   import { LinkButton } from '../LinkButton';
   import { Link } from '../Link';
   import { List } from '../List';
   import { ListGroup } from '../ListGroup';
   import { ListItem } from '../ListItem';
   import { TitleH3 } from '../TitleH3';
-  import { Path } from '$config';
 
   export let menuOnClick: () => void;
 </script>
@@ -26,8 +27,8 @@
     </ListItem>
 
     <ListItem>
-      <Link href={'/' + $locale + Path.USER_SETTINGS}>
-        {$LL.common.settings()}
+      <Link href={'/' + $locale + Path.PLATFORM_ACTIVITIES}>
+        {$LL.common.history()}
       </Link>
     </ListItem>
   </List>

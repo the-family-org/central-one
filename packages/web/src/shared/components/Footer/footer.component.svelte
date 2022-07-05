@@ -43,6 +43,11 @@
   export let smallTopBottomPadding: FooterProps['smallTopBottomPadding'] =
     undefined;
   export let logoIsHomePageLink: FooterProps['logoIsHomePageLink'] = undefined;
+
+  const handleMenu = () => {
+    openMenu = !openMenu;
+    window.location = '#end' as unknown as Location;
+  };
 </script>
 
 <footer class="footer">
@@ -107,11 +112,7 @@
 
         {#if navLinks && !showOnlyLogo && !showOnlyLogoAndLanguages}
           <div class="group">
-            <FooterNavLinks
-              menuOnClick={() => {
-                openMenu = !openMenu;
-              }}
-            />
+            <FooterNavLinks menuOnClick={handleMenu} />
           </div>
         {/if}
 

@@ -23,10 +23,6 @@
 
 <PageContent rowGap="l3">
   <div class="page-group-container">
-    <WarningDiv marginBottom="m">
-      {$LL.common.warningMessage5()}
-    </WarningDiv>
-
     <TitleH1 strong marginTop="m" marginBottom="l">
       {$LL.polls.exampleOne.title()}
     </TitleH1>

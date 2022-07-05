@@ -45,19 +45,14 @@
   <Line neutral pageContentSize={false} />
 
   <div class="messages-container">
-    <TitleH2 fontSize="l3" marginBottom="s2">{$LL.feedback.messages()}</TitleH2>
+    <TitleH2 fontSize="l3">{$LL.feedback.messages()}</TitleH2>
 
     <div class="message">
       <div>
         <span class="label">5.jul.2002</span> @john - John Doe
       </div>
 
-      <Paragraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-        laboriosam saepe ipsum magnam culpa laborum molestias enim at
-        dignissimos facilis similique repellendus voluptate veritatis, quidem
-        perspiciatis corrupti.
-      </Paragraph>
+      <Paragraph>{$LL.feedback.exampleOne.answerTwo()}</Paragraph>
     </div>
 
     <Line neutral heightSize="s3" pageContentSize={false} />
@@ -67,27 +62,7 @@
         <span class="label">2.jul.2022</span> @jane - Jane Doe
       </div>
 
-      <Paragraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-        laboriosam saepe ipsum magnam culpa laborum molestias enim at
-        dignissimos facilis similique repellendus voluptate veritatis, quidem
-        perspiciatis corrupti.
-      </Paragraph>
-    </div>
-
-    <Line neutral heightSize="s3" pageContentSize={false} />
-
-    <div class="message">
-      <div>
-        <sapn class="label">1.jul.2022</sapn> @geo - George Doe
-      </div>
-
-      <Paragraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-        laboriosam saepe ipsum magnam culpa laborum molestias enim at
-        dignissimos facilis similique repellendus voluptate veritatis, quidem
-        perspiciatis corrupti.
-      </Paragraph>
+      <Paragraph>{$LL.feedback.exampleOne.answerOne()}</Paragraph>
     </div>
   </div>
 

@@ -72,6 +72,10 @@ type RootTranslation = {
 		 */
 		settings: string
 		/**
+		 * History
+		 */
+		history: string
+		/**
 		 * Section name
 		 */
 		sectionName: string
@@ -232,7 +236,7 @@ type RootTranslation = {
 		 */
 		menu: string
 		/**
-		 * Admin settings
+		 * Platform settings
 		 */
 		adminSettings: string
 		/**
@@ -244,7 +248,7 @@ type RootTranslation = {
 		 */
 		activitiesHistory: string
 		/**
-		 * Users
+		 * All users
 		 */
 		platformUsers: string
 		/**
@@ -256,7 +260,7 @@ type RootTranslation = {
 		 */
 		invitations: string
 		/**
-		 * Settings
+		 * User settings
 		 */
 		userSettings: string
 		/**
@@ -276,7 +280,7 @@ type RootTranslation = {
 		 */
 		news: string
 	}
-	account: {
+	accounts: {
 		/**
 		 * Account
 		 */
@@ -285,6 +289,34 @@ type RootTranslation = {
 		 * Accounts
 		 */
 		accounts: string
+		/**
+		 * Privileges
+		 */
+		privileges: string
+		/**
+		 * Account types
+		 */
+		accountTypes: string
+		/**
+		 * About platform accounts
+		 */
+		aboutPlatformAccounts: string
+		/**
+		 * Platform account types
+		 */
+		platformAccountTypes: string
+		/**
+		 * Users can have different types of accounts. These types of accounts exist to facilitate access and management of the platform. The existing account types are as follows:
+		 */
+		platformAccountTypesMessage: string
+		/**
+		 * Extra privileges for full members
+		 */
+		extraPrivilegesForFullMembers: string
+		/**
+		 * All "<b>Full Member</b>" accounts can gain some extra privileges attached to them, the following privileges:
+		 */
+		extraPrivilegesForFullMembersMessage: string
 		accountType: {
 			/**
 			 * Admin
@@ -299,18 +331,72 @@ type RootTranslation = {
 			 */
 			developer: string
 			/**
-			 * Member ★
+			 * Full member
 			 */
-			normalMember: string
+			fullMember: string
 			/**
-			 * Member ★
+			 * Partner member
 			 */
-			privilegedMember: string
+			partnerMember: string
 			/**
 			 * Guest
 			 */
 			guest: string
 		}
+		accountDescription: {
+			/**
+			 * This is the most privileged type of account, aimed at lifetime members.
+			 */
+			fullMember: string
+			/**
+			 * This is an account type aimed at users who have some kind of relationship with a full member.
+			 */
+			partnerMember: string
+			/**
+			 * Account aimed at a guest user who knows someone on the platform.
+			 */
+			guest: string
+		}
+		privilegeType: {
+			/**
+			 * Administrator
+			 */
+			administrator: string
+			/**
+			 * Mature age
+			 */
+			matureAge: string
+			/**
+			 * Developer
+			 */
+			developer: string
+		}
+		privilegeDescription: {
+			/**
+			 * This is a privilege that allows a user to change platform settings.
+			 */
+			administrator: string
+			/**
+			 * Member old enough to be considered a mature user to handle choices that require more responsibility.
+			 */
+			matureAge: string
+			/**
+			 * Members who have fulfilled the necessary prerequisites to change the platform code.
+			 */
+			developer: string
+		}
+		/**
+		 * Full member account
+		 */
+		fullMemberAccount: string
+		/**
+		 * Your account type
+		 */
+		yourAccountType: string
+		/**
+		 * You have an account of the type
+		 */
+		youHaveAnAccountOfTheType: string
 	}
 	activities: {
 		/**
@@ -357,6 +443,35 @@ type RootTranslation = {
 			/**
 			 * I find the color of the platform buttons very ugly, so I suggest a color change. I think there should be a possibility for users to choose the color of their buttons in the settings. I would love to be able to click pink buttons.
 			 */
+			message: string
+			/**
+			 * This idea is cool. Will any developer be able to solve this issue?
+			 */
+			answerOne: string
+			/**
+			 * I really liked this idea too. I'll try to implement the code for this pink button, but it seems too complicated, I don't know if I'll be able to.
+			 */
+			answerTwo: string
+		}
+		exampleTwo: {
+			/**
+			 * New functionality to register family tree?
+			 */
+			title: string
+			message: string
+		}
+		exampleThree: {
+			/**
+			 * Spelling error on the home page
+			 */
+			title: string
+			message: string
+		}
+		exampleFour: {
+			/**
+			 * Can we create our version of Netflix?
+			 */
+			title: string
 			message: string
 		}
 		/**
@@ -471,6 +586,19 @@ type RootTranslation = {
 		 * Go to home page
 		 */
 		goToHomePage: string
+	}
+	forms: {
+		userTypesWithAccess: {
+			/**
+			 * Account types that can access content
+			 */
+			title: string
+			/**
+			 * "{mainAccountType}" accounts can view all content on the platform, however, for other types of accounts it is necessary to grant access. Select below which accounts you want to grant access to the content:
+			 * @param {string} mainAccountType
+			 */
+			message: RequiredParams<'mainAccountType'>
+		}
 	}
 	homePage: {
 		headerMessageExample: {
@@ -1111,6 +1239,10 @@ type RootTranslation = {
 			}
 			category: {
 				/**
+				 * Other
+				 */
+				other: string
+				/**
 				 * Category
 				 */
 				category: string
@@ -1119,31 +1251,221 @@ type RootTranslation = {
 				 */
 				sports: string
 				/**
+				 * Memories
+				 */
+				memories: string
+				/**
+				 * Books
+				 */
+				books: string
+				/**
+				 * Gastronomy
+				 */
+				gastronomy: string
+				/**
+				 * Series
+				 */
+				series: string
+				/**
+				 * Movies
+				 */
+				movies: string
+				/**
+				 * Music
+				 */
+				music: string
+				/**
+				 * Food
+				 */
+				food: string
+				/**
+				 * Culture
+				 */
+				culture: string
+				/**
+				 * Health
+				 */
+				health: string
+				/**
+				 * Tourism
+				 */
+				tourism: string
+				/**
+				 * Crime
+				 */
+				crime: string
+				/**
+				 * Science
+				 */
+				science: string
+				/**
+				 * Technology
+				 */
+				technology: string
+				/**
+				 * Business
+				 */
+				business: string
+				/**
+				 * Economy
+				 */
+				economy: string
+				/**
 				 * Politics
 				 */
 				politics: string
+				/**
+				 * Humor
+				 */
+				humor: string
+				/**
+				 * Meteorology
+				 */
+				meteorology: string
+			}
+			feeling: {
+				/**
+				 * Outro
+				 */
+				other: string
+				/**
+				 * Celebrant
+				 */
+				celebrant: string
+				/**
+				 * Passionate
+				 */
+				passionate: string
+				/**
+				 * Happy
+				 */
+				happy: string
+				/**
+				 * Funny
+				 */
+				funny: string
+				/**
+				 * Cool
+				 */
+				cool: string
+				/**
+				 * Silly
+				 */
+				silly: string
+				/**
+				 * Excited
+				 */
+				excited: string
+				/**
+				 * Energized
+				 */
+				energized: string
+				/**
+				 * Powerful
+				 */
+				powerful: string
+				/**
+				 * Peaceful
+				 */
+				peaceful: string
+				/**
+				 * Optimistic
+				 */
+				optimistic: string
+				/**
+				 * Thankful
+				 */
+				thankful: string
+				/**
+				 * Sensitive
+				 */
+				sensitive: string
+				/**
+				 * Calm
+				 */
+				calm: string
+				/**
+				 * Anxious
+				 */
+				anxious: string
+				/**
+				 * Sad
+				 */
+				sad: string
+				/**
+				 * Disappointed
+				 */
+				disappointed: string
+				/**
+				 * Angry
+				 */
+				angry: string
+				/**
+				 * Proud
+				 */
+				proud: string
+				/**
+				 * Surprised
+				 */
+				surprised: string
+				/**
+				 * Shocked
+				 */
+				shocked: string
+				/**
+				 * Confused
+				 */
+				confused: string
+				/**
+				 * Scared
+				 */
+				scared: string
+				/**
+				 * Bored
+				 */
+				bored: string
+				/**
+				 * Sick
+				 */
+				sick: string
+				/**
+				 * Seasick
+				 */
+				seasick: string
+				/**
+				 * Jealous
+				 */
+				jealous: string
+				/**
+				 * Curious
+				 */
+				curious: string
+				/**
+				 * Embarrassed
+				 */
+				embarrassed: string
+				/**
+				 * Kind
+				 */
+				kind: string
+				/**
+				 * Alert
+				 */
+				alert: string
+				/**
+				 * Investigative
+				 */
+				investigative: string
 			}
 			newsType: {
 				/**
-				 * Feeling/Type
+				 * Feeling
 				 */
 				newsType: string
 				/**
-				 * Choose the feeling that the content of this news conveys to those who read it, or the type to which the news fits.
+				 * Choose the feeling that the content of this news fits or conveys to those who read it.
 				 */
 				newsTypeMessage: string
-				/**
-				 * Happiness
-				 */
-				happiness: string
-				/**
-				 * Anger
-				 */
-				anger: string
-				/**
-				 * Sadness
-				 */
-				sadness: string
 			}
 			contentCharacteristics: {
 				/**
@@ -1371,14 +1693,206 @@ type RootTranslation = {
 		 * Platform settings
 		 */
 		platformSettings: string
-		/**
-		 * General settings
-		 */
-		generalSettingsMenu: string
-		/**
-		 * Platform general settings
-		 */
-		generalSettingsTitle: string
+		generalSection: {
+			/**
+			 * General
+			 */
+			menu: string
+			/**
+			 * Platform settings
+			 */
+			title: string
+			/**
+			 * This settings section is only visible to the accounts of <b>admin members</b> who are considered to be <b>mature age</b>.
+			 */
+			message: string
+			/**
+			 * Age of a mature member
+			 */
+			ageOfAMatureMember: string
+			/**
+			 * Set the minimum age for a member to be considered a mature person, and thus receive administrative privileges on the platform.
+			 */
+			ageOfAMatureMemberMessage: string
+			/**
+			 * years
+			 */
+			years: string
+		}
+		newAccountSection: {
+			/**
+			 * New account
+			 */
+			menu: string
+			/**
+			 * New account
+			 */
+			title: string
+			/**
+			 * Configure everything related to creating new member and guest accounts.
+			 */
+			message: string
+			/**
+			 * How are new user accounts created?
+			 */
+			howAreNewUserAccountsCreated: string
+			/**
+			 * By member invitation only
+			 */
+			byMemberInvitationOnly: string
+			/**
+			 * Public registration page
+			 */
+			publicRegistrationPage: string
+			/**
+			 * New registrations disabled
+			 */
+			newRegistrationsDisabled: string
+			/**
+			 * Who can send invitations to new member accounts?
+			 */
+			whoCanSendInvitationsToNewMemberAccounts: string
+			/**
+			 * Admin members, of mature age
+			 */
+			adminMembersOfMatureAge: string
+			/**
+			 * Admin members
+			 */
+			adminMembers: string
+			/**
+			 * Who can send invitations to new guest accounts?
+			 */
+			whoCanSendInvitationsToNewGuestAccounts: string
+		}
+		guestsSection: {
+			/**
+			 * Guests
+			 */
+			menu: string
+			/**
+			 * Guests
+			 */
+			title: string
+			/**
+			 * Manage guest user account privileges here.
+			 */
+			message: string
+			/**
+			 * Features enabled for guest accounts
+			 */
+			featuresEnabled: string
+			/**
+			 * Feedback submission
+			 */
+			feedbackSubmission: string
+			/**
+			 * Polls with guest-enabled content
+			 */
+			pollsWithGuestEnabledContent: string
+			/**
+			 * Topics with guest-enabled content
+			 */
+			topicsWithGuestEnabledContent: string
+			/**
+			 * News with guest-enabled content
+			 */
+			newsWithGuestEnabledContent: string
+		}
+		feedbackSection: {
+			/**
+			 * Feedback
+			 */
+			menu: string
+			/**
+			 * Feedback
+			 */
+			title: string
+			message: string
+		}
+		pollsSection: {
+			/**
+			 * Polls
+			 */
+			menu: string
+			/**
+			 * Polls
+			 */
+			title: string
+			/**
+			 * Configure everything related to platform polls.
+			 */
+			message: string
+			/**
+			 * Maximum number of polls per month
+			 */
+			maximumNumberOfPolls: string
+			/**
+			 * Set the maximum number of polls that can be created per month on the platform. The amount must be the total value of each user's polls added together.
+			 */
+			maximumNumberOfPollsMessage: string
+		}
+		topicsSection: {
+			/**
+			 * Topics
+			 */
+			menu: string
+			/**
+			 * Topics
+			 */
+			title: string
+			/**
+			 * Configure everything related to the platform topics.
+			 */
+			message: string
+			/**
+			 * Chat rooms on topics
+			 */
+			chatRoomsOnTopics: string
+			/**
+			 * Configure whether within each topic there will be a chat room related to the subject of the same topic.
+			 */
+			chatRoomsOnTopicsMessage: string
+			/**
+			 * Enable chat room within topics
+			 */
+			enableChatRoomWithinTopics: string
+			/**
+			 * Disable chatroom on topics
+			 */
+			disableChatroomOnTopics: string
+		}
+		newsReaderSection: {
+			/**
+			 * Newspaper
+			 */
+			menu: string
+			/**
+			 * Group newspaper
+			 */
+			title: string
+			message: string
+			/**
+			 * Newspaper name
+			 */
+			newspaperName: string
+			/**
+			 * Newspaper link
+			 */
+			newspaperLink: string
+			/**
+			 * Periodicity of the newspaper edition
+			 */
+			periodicityOfTheNewspaper: string
+			/**
+			 * Configure how many days it takes for a new edition to be published.
+			 */
+			periodicityOfTheNewspaperMessage: string
+			/**
+			 * days
+			 */
+			days: string
+		}
 	}
 	polls: {
 		exampleOne: {
@@ -1566,6 +2080,14 @@ type RootTranslation = {
 		 */
 		name: string
 		/**
+		 * Full name
+		 */
+		fullName: string
+		/**
+		 * Short name
+		 */
+		shortName: string
+		/**
 		 * Nickname
 		 */
 		nickname: string
@@ -1574,9 +2096,33 @@ type RootTranslation = {
 		 */
 		account: string
 		/**
-		 * Edit data
+		 * Birth date
+		 */
+		birthDate: string
+		/**
+		 * Age
+		 */
+		age: string
+		/**
+		 * years
+		 */
+		years: string
+		/**
+		 * Useful links
+		 */
+		usefulLinks: string
+		/**
+		 * Edit this profile data
 		 */
 		editUserData: string
+		/**
+		 * See other users profiles
+		 */
+		goToOtherProfiles: string
+		/**
+		 * Learn more about account types
+		 */
+		goToAccountTypes: string
 	}
 	signIn: {
 		/**
@@ -1831,13 +2377,41 @@ type RootTranslation = {
 			 */
 			traditionalCoatOfArms: string
 			/**
+			 * This is a reinterpretation of the old Doe Family coat of arms. This coat of arms is versatile and can be used in almost any context.
+			 */
+			traditionalCoatOfArmsMessage: string
+			/**
 			 * Fun coat of arms
 			 */
 			funCoatOfArms: string
 			/**
+			 * This is a lively colored coat of arms and was created to be used in fun contexts such as parties and recreational events.
+			 */
+			funCoatOfArmsMessage: string
+			/**
 			 * Mourning coat of arms
 			 */
 			mourningCoatOfArms: string
+			/**
+			 * This is a coat of arms with sober colors to be used in mourning circumstances.
+			 */
+			mourningCoatOfArmsMessage: string
+			/**
+			 * This is another example of a page created within the topic by one of the platform's members. Because any member can create pages within the topics created by other members.
+			 */
+			anotherPageMessage: string
+			/**
+			 * today at 3 am
+			 */
+			chatMessageDate: string
+			/**
+			 * Example of message sent
+			 */
+			chatMessage: string
+			/**
+			 * Place to write messages
+			 */
+			placeToWriteMessages: string
 		}
 		warningMessage: {
 			/**
@@ -1861,28 +2435,66 @@ type RootTranslation = {
 			 */
 			doNotOpen: string
 		}
+		/**
+		 * back
+		 */
+		back: string
 	}
 	userSettings: {
 		/**
 		 * Settings
 		 */
 		userSettings: string
+		menu: {
+			/**
+			 * General
+			 */
+			general: string
+			/**
+			 * Profile image
+			 */
+			profileImage: string
+			/**
+			 * Theme
+			 */
+			theme: string
+		}
 		/**
-		 * General settings
+		 * Account settings
 		 */
 		generalSettings: string
+		/**
+		 * Configure your user profile data here.
+		 */
+		generalSettingsMessage: string
+		/**
+		 * Profile image
+		 */
+		profileImage: string
+		/**
+		 * Upload an image to your user profile.
+		 */
+		profileImageMessage: string
 		/**
 		 * Theme
 		 */
 		theme: string
 		/**
-		 * Account
+		 * Full name
 		 */
-		account: string
+		fullName: string
 		/**
-		 * You have an account of the type: <b>MEMBER</b>
+		 * Email
 		 */
-		accountTypeMessage: string
+		email: string
+		/**
+		 * Password
+		 */
+		password: string
+		/**
+		 * Birth date
+		 */
+		birthDate: string
 	}
 }
 
@@ -1944,6 +2556,10 @@ export type TranslationFunctions = {
 		 * Settings
 		 */
 		settings: () => LocalizedString
+		/**
+		 * History
+		 */
+		history: () => LocalizedString
 		/**
 		 * Section name
 		 */
@@ -2105,7 +2721,7 @@ export type TranslationFunctions = {
 		 */
 		menu: () => LocalizedString
 		/**
-		 * Admin settings
+		 * Platform settings
 		 */
 		adminSettings: () => LocalizedString
 		/**
@@ -2117,7 +2733,7 @@ export type TranslationFunctions = {
 		 */
 		activitiesHistory: () => LocalizedString
 		/**
-		 * Users
+		 * All users
 		 */
 		platformUsers: () => LocalizedString
 		/**
@@ -2129,7 +2745,7 @@ export type TranslationFunctions = {
 		 */
 		invitations: () => LocalizedString
 		/**
-		 * Settings
+		 * User settings
 		 */
 		userSettings: () => LocalizedString
 		/**
@@ -2149,7 +2765,7 @@ export type TranslationFunctions = {
 		 */
 		news: () => LocalizedString
 	}
-	account: {
+	accounts: {
 		/**
 		 * Account
 		 */
@@ -2158,6 +2774,34 @@ export type TranslationFunctions = {
 		 * Accounts
 		 */
 		accounts: () => LocalizedString
+		/**
+		 * Privileges
+		 */
+		privileges: () => LocalizedString
+		/**
+		 * Account types
+		 */
+		accountTypes: () => LocalizedString
+		/**
+		 * About platform accounts
+		 */
+		aboutPlatformAccounts: () => LocalizedString
+		/**
+		 * Platform account types
+		 */
+		platformAccountTypes: () => LocalizedString
+		/**
+		 * Users can have different types of accounts. These types of accounts exist to facilitate access and management of the platform. The existing account types are as follows:
+		 */
+		platformAccountTypesMessage: () => LocalizedString
+		/**
+		 * Extra privileges for full members
+		 */
+		extraPrivilegesForFullMembers: () => LocalizedString
+		/**
+		 * All "<b>Full Member</b>" accounts can gain some extra privileges attached to them, the following privileges:
+		 */
+		extraPrivilegesForFullMembersMessage: () => LocalizedString
 		accountType: {
 			/**
 			 * Admin
@@ -2172,18 +2816,72 @@ export type TranslationFunctions = {
 			 */
 			developer: () => LocalizedString
 			/**
-			 * Member ★
+			 * Full member
 			 */
-			normalMember: () => LocalizedString
+			fullMember: () => LocalizedString
 			/**
-			 * Member ★
+			 * Partner member
 			 */
-			privilegedMember: () => LocalizedString
+			partnerMember: () => LocalizedString
 			/**
 			 * Guest
 			 */
 			guest: () => LocalizedString
 		}
+		accountDescription: {
+			/**
+			 * This is the most privileged type of account, aimed at lifetime members.
+			 */
+			fullMember: () => LocalizedString
+			/**
+			 * This is an account type aimed at users who have some kind of relationship with a full member.
+			 */
+			partnerMember: () => LocalizedString
+			/**
+			 * Account aimed at a guest user who knows someone on the platform.
+			 */
+			guest: () => LocalizedString
+		}
+		privilegeType: {
+			/**
+			 * Administrator
+			 */
+			administrator: () => LocalizedString
+			/**
+			 * Mature age
+			 */
+			matureAge: () => LocalizedString
+			/**
+			 * Developer
+			 */
+			developer: () => LocalizedString
+		}
+		privilegeDescription: {
+			/**
+			 * This is a privilege that allows a user to change platform settings.
+			 */
+			administrator: () => LocalizedString
+			/**
+			 * Member old enough to be considered a mature user to handle choices that require more responsibility.
+			 */
+			matureAge: () => LocalizedString
+			/**
+			 * Members who have fulfilled the necessary prerequisites to change the platform code.
+			 */
+			developer: () => LocalizedString
+		}
+		/**
+		 * Full member account
+		 */
+		fullMemberAccount: () => LocalizedString
+		/**
+		 * Your account type
+		 */
+		yourAccountType: () => LocalizedString
+		/**
+		 * You have an account of the type
+		 */
+		youHaveAnAccountOfTheType: () => LocalizedString
 	}
 	activities: {
 		/**
@@ -2230,6 +2928,35 @@ export type TranslationFunctions = {
 			/**
 			 * I find the color of the platform buttons very ugly, so I suggest a color change. I think there should be a possibility for users to choose the color of their buttons in the settings. I would love to be able to click pink buttons.
 			 */
+			message: () => LocalizedString
+			/**
+			 * This idea is cool. Will any developer be able to solve this issue?
+			 */
+			answerOne: () => LocalizedString
+			/**
+			 * I really liked this idea too. I'll try to implement the code for this pink button, but it seems too complicated, I don't know if I'll be able to.
+			 */
+			answerTwo: () => LocalizedString
+		}
+		exampleTwo: {
+			/**
+			 * New functionality to register family tree?
+			 */
+			title: () => LocalizedString
+			message: () => LocalizedString
+		}
+		exampleThree: {
+			/**
+			 * Spelling error on the home page
+			 */
+			title: () => LocalizedString
+			message: () => LocalizedString
+		}
+		exampleFour: {
+			/**
+			 * Can we create our version of Netflix?
+			 */
+			title: () => LocalizedString
 			message: () => LocalizedString
 		}
 		/**
@@ -2344,6 +3071,18 @@ export type TranslationFunctions = {
 		 * Go to home page
 		 */
 		goToHomePage: () => LocalizedString
+	}
+	forms: {
+		userTypesWithAccess: {
+			/**
+			 * Account types that can access content
+			 */
+			title: () => LocalizedString
+			/**
+			 * "{mainAccountType}" accounts can view all content on the platform, however, for other types of accounts it is necessary to grant access. Select below which accounts you want to grant access to the content:
+			 */
+			message: (arg: { mainAccountType: string }) => LocalizedString
+		}
 	}
 	homePage: {
 		headerMessageExample: {
@@ -2983,6 +3722,10 @@ export type TranslationFunctions = {
 			}
 			category: {
 				/**
+				 * Other
+				 */
+				other: () => LocalizedString
+				/**
 				 * Category
 				 */
 				category: () => LocalizedString
@@ -2991,31 +3734,221 @@ export type TranslationFunctions = {
 				 */
 				sports: () => LocalizedString
 				/**
+				 * Memories
+				 */
+				memories: () => LocalizedString
+				/**
+				 * Books
+				 */
+				books: () => LocalizedString
+				/**
+				 * Gastronomy
+				 */
+				gastronomy: () => LocalizedString
+				/**
+				 * Series
+				 */
+				series: () => LocalizedString
+				/**
+				 * Movies
+				 */
+				movies: () => LocalizedString
+				/**
+				 * Music
+				 */
+				music: () => LocalizedString
+				/**
+				 * Food
+				 */
+				food: () => LocalizedString
+				/**
+				 * Culture
+				 */
+				culture: () => LocalizedString
+				/**
+				 * Health
+				 */
+				health: () => LocalizedString
+				/**
+				 * Tourism
+				 */
+				tourism: () => LocalizedString
+				/**
+				 * Crime
+				 */
+				crime: () => LocalizedString
+				/**
+				 * Science
+				 */
+				science: () => LocalizedString
+				/**
+				 * Technology
+				 */
+				technology: () => LocalizedString
+				/**
+				 * Business
+				 */
+				business: () => LocalizedString
+				/**
+				 * Economy
+				 */
+				economy: () => LocalizedString
+				/**
 				 * Politics
 				 */
 				politics: () => LocalizedString
+				/**
+				 * Humor
+				 */
+				humor: () => LocalizedString
+				/**
+				 * Meteorology
+				 */
+				meteorology: () => LocalizedString
+			}
+			feeling: {
+				/**
+				 * Outro
+				 */
+				other: () => LocalizedString
+				/**
+				 * Celebrant
+				 */
+				celebrant: () => LocalizedString
+				/**
+				 * Passionate
+				 */
+				passionate: () => LocalizedString
+				/**
+				 * Happy
+				 */
+				happy: () => LocalizedString
+				/**
+				 * Funny
+				 */
+				funny: () => LocalizedString
+				/**
+				 * Cool
+				 */
+				cool: () => LocalizedString
+				/**
+				 * Silly
+				 */
+				silly: () => LocalizedString
+				/**
+				 * Excited
+				 */
+				excited: () => LocalizedString
+				/**
+				 * Energized
+				 */
+				energized: () => LocalizedString
+				/**
+				 * Powerful
+				 */
+				powerful: () => LocalizedString
+				/**
+				 * Peaceful
+				 */
+				peaceful: () => LocalizedString
+				/**
+				 * Optimistic
+				 */
+				optimistic: () => LocalizedString
+				/**
+				 * Thankful
+				 */
+				thankful: () => LocalizedString
+				/**
+				 * Sensitive
+				 */
+				sensitive: () => LocalizedString
+				/**
+				 * Calm
+				 */
+				calm: () => LocalizedString
+				/**
+				 * Anxious
+				 */
+				anxious: () => LocalizedString
+				/**
+				 * Sad
+				 */
+				sad: () => LocalizedString
+				/**
+				 * Disappointed
+				 */
+				disappointed: () => LocalizedString
+				/**
+				 * Angry
+				 */
+				angry: () => LocalizedString
+				/**
+				 * Proud
+				 */
+				proud: () => LocalizedString
+				/**
+				 * Surprised
+				 */
+				surprised: () => LocalizedString
+				/**
+				 * Shocked
+				 */
+				shocked: () => LocalizedString
+				/**
+				 * Confused
+				 */
+				confused: () => LocalizedString
+				/**
+				 * Scared
+				 */
+				scared: () => LocalizedString
+				/**
+				 * Bored
+				 */
+				bored: () => LocalizedString
+				/**
+				 * Sick
+				 */
+				sick: () => LocalizedString
+				/**
+				 * Seasick
+				 */
+				seasick: () => LocalizedString
+				/**
+				 * Jealous
+				 */
+				jealous: () => LocalizedString
+				/**
+				 * Curious
+				 */
+				curious: () => LocalizedString
+				/**
+				 * Embarrassed
+				 */
+				embarrassed: () => LocalizedString
+				/**
+				 * Kind
+				 */
+				kind: () => LocalizedString
+				/**
+				 * Alert
+				 */
+				alert: () => LocalizedString
+				/**
+				 * Investigative
+				 */
+				investigative: () => LocalizedString
 			}
 			newsType: {
 				/**
-				 * Feeling/Type
+				 * Feeling
 				 */
 				newsType: () => LocalizedString
 				/**
-				 * Choose the feeling that the content of this news conveys to those who read it, or the type to which the news fits.
+				 * Choose the feeling that the content of this news fits or conveys to those who read it.
 				 */
 				newsTypeMessage: () => LocalizedString
-				/**
-				 * Happiness
-				 */
-				happiness: () => LocalizedString
-				/**
-				 * Anger
-				 */
-				anger: () => LocalizedString
-				/**
-				 * Sadness
-				 */
-				sadness: () => LocalizedString
 			}
 			contentCharacteristics: {
 				/**
@@ -3242,14 +4175,206 @@ export type TranslationFunctions = {
 		 * Platform settings
 		 */
 		platformSettings: () => LocalizedString
-		/**
-		 * General settings
-		 */
-		generalSettingsMenu: () => LocalizedString
-		/**
-		 * Platform general settings
-		 */
-		generalSettingsTitle: () => LocalizedString
+		generalSection: {
+			/**
+			 * General
+			 */
+			menu: () => LocalizedString
+			/**
+			 * Platform settings
+			 */
+			title: () => LocalizedString
+			/**
+			 * This settings section is only visible to the accounts of <b>admin members</b> who are considered to be <b>mature age</b>.
+			 */
+			message: () => LocalizedString
+			/**
+			 * Age of a mature member
+			 */
+			ageOfAMatureMember: () => LocalizedString
+			/**
+			 * Set the minimum age for a member to be considered a mature person, and thus receive administrative privileges on the platform.
+			 */
+			ageOfAMatureMemberMessage: () => LocalizedString
+			/**
+			 * years
+			 */
+			years: () => LocalizedString
+		}
+		newAccountSection: {
+			/**
+			 * New account
+			 */
+			menu: () => LocalizedString
+			/**
+			 * New account
+			 */
+			title: () => LocalizedString
+			/**
+			 * Configure everything related to creating new member and guest accounts.
+			 */
+			message: () => LocalizedString
+			/**
+			 * How are new user accounts created?
+			 */
+			howAreNewUserAccountsCreated: () => LocalizedString
+			/**
+			 * By member invitation only
+			 */
+			byMemberInvitationOnly: () => LocalizedString
+			/**
+			 * Public registration page
+			 */
+			publicRegistrationPage: () => LocalizedString
+			/**
+			 * New registrations disabled
+			 */
+			newRegistrationsDisabled: () => LocalizedString
+			/**
+			 * Who can send invitations to new member accounts?
+			 */
+			whoCanSendInvitationsToNewMemberAccounts: () => LocalizedString
+			/**
+			 * Admin members, of mature age
+			 */
+			adminMembersOfMatureAge: () => LocalizedString
+			/**
+			 * Admin members
+			 */
+			adminMembers: () => LocalizedString
+			/**
+			 * Who can send invitations to new guest accounts?
+			 */
+			whoCanSendInvitationsToNewGuestAccounts: () => LocalizedString
+		}
+		guestsSection: {
+			/**
+			 * Guests
+			 */
+			menu: () => LocalizedString
+			/**
+			 * Guests
+			 */
+			title: () => LocalizedString
+			/**
+			 * Manage guest user account privileges here.
+			 */
+			message: () => LocalizedString
+			/**
+			 * Features enabled for guest accounts
+			 */
+			featuresEnabled: () => LocalizedString
+			/**
+			 * Feedback submission
+			 */
+			feedbackSubmission: () => LocalizedString
+			/**
+			 * Polls with guest-enabled content
+			 */
+			pollsWithGuestEnabledContent: () => LocalizedString
+			/**
+			 * Topics with guest-enabled content
+			 */
+			topicsWithGuestEnabledContent: () => LocalizedString
+			/**
+			 * News with guest-enabled content
+			 */
+			newsWithGuestEnabledContent: () => LocalizedString
+		}
+		feedbackSection: {
+			/**
+			 * Feedback
+			 */
+			menu: () => LocalizedString
+			/**
+			 * Feedback
+			 */
+			title: () => LocalizedString
+			message: () => LocalizedString
+		}
+		pollsSection: {
+			/**
+			 * Polls
+			 */
+			menu: () => LocalizedString
+			/**
+			 * Polls
+			 */
+			title: () => LocalizedString
+			/**
+			 * Configure everything related to platform polls.
+			 */
+			message: () => LocalizedString
+			/**
+			 * Maximum number of polls per month
+			 */
+			maximumNumberOfPolls: () => LocalizedString
+			/**
+			 * Set the maximum number of polls that can be created per month on the platform. The amount must be the total value of each user's polls added together.
+			 */
+			maximumNumberOfPollsMessage: () => LocalizedString
+		}
+		topicsSection: {
+			/**
+			 * Topics
+			 */
+			menu: () => LocalizedString
+			/**
+			 * Topics
+			 */
+			title: () => LocalizedString
+			/**
+			 * Configure everything related to the platform topics.
+			 */
+			message: () => LocalizedString
+			/**
+			 * Chat rooms on topics
+			 */
+			chatRoomsOnTopics: () => LocalizedString
+			/**
+			 * Configure whether within each topic there will be a chat room related to the subject of the same topic.
+			 */
+			chatRoomsOnTopicsMessage: () => LocalizedString
+			/**
+			 * Enable chat room within topics
+			 */
+			enableChatRoomWithinTopics: () => LocalizedString
+			/**
+			 * Disable chatroom on topics
+			 */
+			disableChatroomOnTopics: () => LocalizedString
+		}
+		newsReaderSection: {
+			/**
+			 * Newspaper
+			 */
+			menu: () => LocalizedString
+			/**
+			 * Group newspaper
+			 */
+			title: () => LocalizedString
+			message: () => LocalizedString
+			/**
+			 * Newspaper name
+			 */
+			newspaperName: () => LocalizedString
+			/**
+			 * Newspaper link
+			 */
+			newspaperLink: () => LocalizedString
+			/**
+			 * Periodicity of the newspaper edition
+			 */
+			periodicityOfTheNewspaper: () => LocalizedString
+			/**
+			 * Configure how many days it takes for a new edition to be published.
+			 */
+			periodicityOfTheNewspaperMessage: () => LocalizedString
+			/**
+			 * days
+			 */
+			days: () => LocalizedString
+		}
 	}
 	polls: {
 		exampleOne: {
@@ -3437,6 +4562,14 @@ export type TranslationFunctions = {
 		 */
 		name: () => LocalizedString
 		/**
+		 * Full name
+		 */
+		fullName: () => LocalizedString
+		/**
+		 * Short name
+		 */
+		shortName: () => LocalizedString
+		/**
 		 * Nickname
 		 */
 		nickname: () => LocalizedString
@@ -3445,9 +4578,33 @@ export type TranslationFunctions = {
 		 */
 		account: () => LocalizedString
 		/**
-		 * Edit data
+		 * Birth date
+		 */
+		birthDate: () => LocalizedString
+		/**
+		 * Age
+		 */
+		age: () => LocalizedString
+		/**
+		 * years
+		 */
+		years: () => LocalizedString
+		/**
+		 * Useful links
+		 */
+		usefulLinks: () => LocalizedString
+		/**
+		 * Edit this profile data
 		 */
 		editUserData: () => LocalizedString
+		/**
+		 * See other users profiles
+		 */
+		goToOtherProfiles: () => LocalizedString
+		/**
+		 * Learn more about account types
+		 */
+		goToAccountTypes: () => LocalizedString
 	}
 	signIn: {
 		/**
@@ -3702,13 +4859,41 @@ export type TranslationFunctions = {
 			 */
 			traditionalCoatOfArms: () => LocalizedString
 			/**
+			 * This is a reinterpretation of the old Doe Family coat of arms. This coat of arms is versatile and can be used in almost any context.
+			 */
+			traditionalCoatOfArmsMessage: () => LocalizedString
+			/**
 			 * Fun coat of arms
 			 */
 			funCoatOfArms: () => LocalizedString
 			/**
+			 * This is a lively colored coat of arms and was created to be used in fun contexts such as parties and recreational events.
+			 */
+			funCoatOfArmsMessage: () => LocalizedString
+			/**
 			 * Mourning coat of arms
 			 */
 			mourningCoatOfArms: () => LocalizedString
+			/**
+			 * This is a coat of arms with sober colors to be used in mourning circumstances.
+			 */
+			mourningCoatOfArmsMessage: () => LocalizedString
+			/**
+			 * This is another example of a page created within the topic by one of the platform's members. Because any member can create pages within the topics created by other members.
+			 */
+			anotherPageMessage: () => LocalizedString
+			/**
+			 * today at 3 am
+			 */
+			chatMessageDate: () => LocalizedString
+			/**
+			 * Example of message sent
+			 */
+			chatMessage: () => LocalizedString
+			/**
+			 * Place to write messages
+			 */
+			placeToWriteMessages: () => LocalizedString
 		}
 		warningMessage: {
 			/**
@@ -3732,28 +4917,66 @@ export type TranslationFunctions = {
 			 */
 			doNotOpen: () => LocalizedString
 		}
+		/**
+		 * back
+		 */
+		back: () => LocalizedString
 	}
 	userSettings: {
 		/**
 		 * Settings
 		 */
 		userSettings: () => LocalizedString
+		menu: {
+			/**
+			 * General
+			 */
+			general: () => LocalizedString
+			/**
+			 * Profile image
+			 */
+			profileImage: () => LocalizedString
+			/**
+			 * Theme
+			 */
+			theme: () => LocalizedString
+		}
 		/**
-		 * General settings
+		 * Account settings
 		 */
 		generalSettings: () => LocalizedString
+		/**
+		 * Configure your user profile data here.
+		 */
+		generalSettingsMessage: () => LocalizedString
+		/**
+		 * Profile image
+		 */
+		profileImage: () => LocalizedString
+		/**
+		 * Upload an image to your user profile.
+		 */
+		profileImageMessage: () => LocalizedString
 		/**
 		 * Theme
 		 */
 		theme: () => LocalizedString
 		/**
-		 * Account
+		 * Full name
 		 */
-		account: () => LocalizedString
+		fullName: () => LocalizedString
 		/**
-		 * You have an account of the type: <b>MEMBER</b>
+		 * Email
 		 */
-		accountTypeMessage: () => LocalizedString
+		email: () => LocalizedString
+		/**
+		 * Password
+		 */
+		password: () => LocalizedString
+		/**
+		 * Birth date
+		 */
+		birthDate: () => LocalizedString
 	}
 }
 

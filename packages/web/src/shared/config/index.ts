@@ -21,6 +21,7 @@ export enum Path {
   NEWS_CREATE = '/news/create',
   NEWS_CREATED = '/news/created',
   PLATFORM_USERS = '/platform/users',
+  PLATFORM_ACCOUNTS = '/platform/accounts',
   PLATFORM_ACTIVITIES = '/platform/activities',
   PLATFORM_SETTINGS = '/platform/settings',
   PLATFORM_FEEDBACK = '/platform/feedback',

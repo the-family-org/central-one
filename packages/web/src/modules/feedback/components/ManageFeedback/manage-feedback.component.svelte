@@ -46,7 +46,7 @@
   <div class="posted-feedback">
     <div class="row feedback-title">
       <LinkButton on:click={handleNonExistingExampleModal}>
-        Lorem ipsum dolor sit amet consectetur
+        {$LL.feedback.exampleTwo.title()}
       </LinkButton>
     </div>
 
@@ -63,7 +63,7 @@
   <div class="posted-feedback">
     <div class="row feedback-title">
       <LinkButton on:click={handleNonExistingExampleModal}>
-        Lorem ipsum lorem ipsum
+        {$LL.feedback.exampleThree.title()}
       </LinkButton>
     </div>
 
@@ -80,7 +80,7 @@
   <div class="posted-feedback">
     <div class="row feedback-title">
       <LinkButton on:click={handleNonExistingExampleModal}>
-        Lorem ipsum dolor sit amet consectetur
+        {$LL.feedback.exampleFour.title()}
       </LinkButton>
     </div>
 

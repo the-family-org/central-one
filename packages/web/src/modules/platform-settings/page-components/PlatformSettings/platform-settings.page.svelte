@@ -5,17 +5,22 @@
   import { Footer } from '$components/Footer';
   import { Header } from '$components/Header';
   import { LinkButton } from '$components/LinkButton';
-  import { Paragraph } from '$components/Paragraph';
-  import { TitleH1 } from '$components/TitleH1';
-  import { TitleH3 } from '$components/TitleH3';
-  import { Radio } from '$components/Radio';
-  import { Checkbox } from '$components/Checkbox';
+
+  import { GeneralContent } from '../../components/GeneralContent';
+  import { NewAccountContent } from '../../components/NewAccountContent';
+  import { GuestsContent } from '../../components/GuestsContent';
+  import { PollsContent } from '../../components/PollsContent';
+  import { TopicsContent } from '../../components/TopicsContent';
+  import { NewsReaderContent } from '../../components/NewsReaderContent';
 
   enum Section {
-    GENERAL = 'general',
-    LOREM_IPSUM_ONE = 'lorem-ipsum-one',
-    LOREM_IPSUM_TWO = 'lorem-ipsum-two',
-    LOREM_IPSUM_THREE = 'lorem-ipsum-three',
+    GENERAL = 'general-section',
+    NEW_ACCOUNT = 'new-account-section',
+    GUESTS = 'guests-section',
+    FEEDBACK = 'feedback-section',
+    POLLS = 'polls-section',
+    TOPICS = 'topics-section',
+    NEWS_READER = 'news-reader-section',
   }
 
   let currentSection: Section = Section.GENERAL;
@@ -40,104 +45,95 @@
       linkType={currentSection === Section.GENERAL ? 'current' : 'default'}
       on:click={() => setSection(Section.GENERAL)}
     >
-      {$LL.platformSettings.generalSettingsMenu()}
+      {$LL.platformSettings.generalSection.menu()}
     </LinkButton>
 
     <LinkButton
-      linkType={currentSection === Section.LOREM_IPSUM_ONE
-        ? 'current'
-        : 'default'}
-      on:click={() => setSection(Section.LOREM_IPSUM_ONE)}
+      linkType={currentSection === Section.NEW_ACCOUNT ? 'current' : 'default'}
+      on:click={() => setSection(Section.NEW_ACCOUNT)}
     >
-      Lorem ipsum 1
+      {$LL.platformSettings.newAccountSection.menu()}
     </LinkButton>
 
     <LinkButton
-      linkType={currentSection === Section.LOREM_IPSUM_TWO
-        ? 'current'
-        : 'default'}
-      on:click={() => setSection(Section.LOREM_IPSUM_TWO)}
+      linkType={currentSection === Section.GUESTS ? 'current' : 'default'}
+      on:click={() => setSection(Section.GUESTS)}
     >
-      Lorem ipsum 2
+      {$LL.platformSettings.guestsSection.menu()}
+    </LinkButton>
+
+    <!-- <LinkButton
+      linkType={currentSection === Section.FEEDBACK ? 'current' : 'default'}
+      on:click={() => setSection(Section.FEEDBACK)}
+    >
+      {$LL.platformSettings.feedbackSection.menu()}
+    </LinkButton> -->
+
+    <LinkButton
+      linkType={currentSection === Section.POLLS ? 'current' : 'default'}
+      on:click={() => setSection(Section.POLLS)}
+    >
+      {$LL.platformSettings.pollsSection.menu()}
     </LinkButton>
 
     <LinkButton
-      linkType={currentSection === Section.LOREM_IPSUM_THREE
-        ? 'current'
-        : 'default'}
-      on:click={() => setSection(Section.LOREM_IPSUM_THREE)}
+      linkType={currentSection === Section.TOPICS ? 'current' : 'default'}
+      on:click={() => setSection(Section.TOPICS)}
     >
-      Lorem ipsum 3
+      {$LL.platformSettings.topicsSection.menu()}
+    </LinkButton>
+
+    <LinkButton
+      linkType={currentSection === Section.NEWS_READER ? 'current' : 'default'}
+      on:click={() => setSection(Section.NEWS_READER)}
+    >
+      {$LL.platformSettings.newsReaderSection.menu()}
     </LinkButton>
   </div>
 
   {#if currentSection === Section.GENERAL}
-    <div class="content">
-      <div>
-        <TitleH1 strong marginBottom="s">
-          {$LL.platformSettings.generalSettingsTitle()}
+    <div class="content-container">
+      <GeneralContent />
+    </div>
+  {/if}
+
+  {#if currentSection === Section.NEW_ACCOUNT}
+    <div class="content-container">
+      <NewAccountContent />
+    </div>
+  {/if}
+
+  {#if currentSection === Section.GUESTS}
+    <div class="content-container">
+      <GuestsContent />
+    </div>
+  {/if}
+
+  <!-- {#if currentSection === Section.FEEDBACK}
+    <div class="content-container">
+      <div class="content-group">
+        <TitleH1 strong marginBottom="s3">
+          {$LL.platformSettings.feedbackSection.title()}
         </TitleH1>
-
-        <Paragraph>Lorem ipsum dolor sit amet consectetur...</Paragraph>
       </div>
+    </div>
+  {/if} -->
 
-      <div class="content-group">
-        <TitleH3 strong>Lorem ipsum</TitleH3>
-
-        <div class="row">
-          <Radio name="lorem-ipsum-1" value="" />
-          <span>Lorem ipsum</span>
-        </div>
-
-        <div class="row">
-          <Radio name="lorem-ipsum-1" value="" />
-          <span>Lorem ipsum</span>
-        </div>
-      </div>
-
-      <div class="content-group">
-        <TitleH3 strong>Lorem ipsum</TitleH3>
-
-        <div class="row">
-          <Checkbox value="" />
-          <span>Lorem ipsum</span>
-        </div>
-
-        <div class="row">
-          <Checkbox value="" />
-          <span>Lorem ipsum</span>
-        </div>
-      </div>
+  {#if currentSection === Section.POLLS}
+    <div class="content-container">
+      <PollsContent />
     </div>
   {/if}
 
-  {#if currentSection === Section.LOREM_IPSUM_ONE}
-    <div class="content">
-      <div>
-        <TitleH1 strong marginBottom="s">Lorem ipsum 1</TitleH1>
-
-        <Paragraph>Lorem ipsum dolor sit amet consectetur...</Paragraph>
-      </div>
+  {#if currentSection === Section.TOPICS}
+    <div class="content-container">
+      <TopicsContent />
     </div>
   {/if}
 
-  {#if currentSection === Section.LOREM_IPSUM_TWO}
-    <div class="content">
-      <div>
-        <TitleH1 strong marginBottom="s">Lorem ipsum 2</TitleH1>
-
-        <Paragraph>Lorem ipsum dolor sit amet consectetur...</Paragraph>
-      </div>
-    </div>
-  {/if}
-
-  {#if currentSection === Section.LOREM_IPSUM_THREE}
-    <div class="content">
-      <div>
-        <TitleH1 strong marginBottom="s">Lorem ipsum 3</TitleH1>
-
-        <Paragraph>Lorem ipsum dolor sit amet consectetur...</Paragraph>
-      </div>
+  {#if currentSection === Section.NEWS_READER}
+    <div class="content-container">
+      <NewsReaderContent />
     </div>
   {/if}
 </main>
@@ -156,7 +152,7 @@
     display: flex;
     flex-direction: column;
 
-    min-width: 270px;
+    min-width: 210px;
 
     height: auto;
     padding: var(--spacing-m);
@@ -167,28 +163,15 @@
     border-bottom: none;
   }
 
-  .content {
+  .content-container {
     display: flex;
     flex-direction: column;
 
+    max-width: 800px;
     width: 100%;
     padding: var(--spacing-l) var(--spacing-l) var(--spacing-l5)
       var(--spacing-l);
-    gap: var(--gap-l3);
-  }
-
-  .content-group {
-    display: flex;
-    flex-direction: column;
-
-    gap: var(--gap-m);
-  }
-
-  .row {
-    display: flex;
-    flex-direction: row;
-
-    gap: var(--gap-s);
+    gap: var(--gap-l5);
   }
 
   @media (max-width: 860px) {

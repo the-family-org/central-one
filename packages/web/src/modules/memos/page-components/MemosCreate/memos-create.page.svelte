@@ -5,6 +5,7 @@
 
   import { Button } from '$components/Button';
   import { Footer } from '$components/Footer';
+  import { FormUserTypesWithAccess } from '$components/FormUserTypesWithAccess';
   import { Header } from '$components/Header';
   import { LeftBorderDiv } from '$components/LeftBorderDiv';
   import { Line } from '$components/Line';
@@ -12,34 +13,35 @@
   import { Textarea } from '$components/Textarea';
   import { TextInput } from '$components/TextInput';
   import { TitleH1 } from '$components/TitleH1';
-  import { TitleH3 } from '$components/TitleH3';
-  import { WarningDiv } from '$components/WarningDiv';
+  import { TitleH2 } from '$components/TitleH2';
 </script>
 
 <Header sessionTitle={$LL.memos.memos()} />
 <Line />
 
-<PageContent>
+<PageContent rowGap="l4">
   <div class="group-container">
-    <TitleH1>{$LL.memos.createMemo()}</TitleH1>
-
-    <WarningDiv>{$LL.common.warningMessage5()}</WarningDiv>
+    <TitleH1 marginTop="m">{$LL.memos.createMemo()}</TitleH1>
   </div>
 
   <div class="group-container">
-    <TitleH3>{$LL.memos.title()}</TitleH3>
+    <TitleH2>{$LL.memos.title()}</TitleH2>
 
     <TextInput value="" />
   </div>
 
   <div class="group-container">
-    <TitleH3>{$LL.memos.message()}</TitleH3>
+    <TitleH2>{$LL.memos.message()}</TitleH2>
 
     <Textarea rows={7} value="" />
   </div>
 
   <div class="group-container">
-    <LeftBorderDiv style="max-width: 560px;">
+    <FormUserTypesWithAccess />
+  </div>
+
+  <div class="group-container">
+    <LeftBorderDiv style="max-width: 560px; margin-top: 50px;">
       {$LL.common.warningMessage4()}
     </LeftBorderDiv>
 

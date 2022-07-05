@@ -20,11 +20,11 @@
 
 <slot />
 
-<ListGroup direction="row">
-  <List style="min-width: 180px;">
+<ListGroup direction="row" columnGap="l">
+  <ul class="nav-link-group">
     <ListItem>
-      <Link href={'/' + $locale + Path.PLATFORM_SETTINGS}>
-        {$LL.menu.adminSettings()}
+      <Link href={'/' + $locale + Path.PLATFORM_INVITATIONS}>
+        {$LL.menu.invitations()}
       </Link>
     </ListItem>
 
@@ -39,9 +39,9 @@
         {$LL.menu.activitiesHistory()}
       </Link>
     </ListItem>
-  </List>
+  </ul>
 
-  <List style="min-width: 180px;">
+  <ul class="nav-link-group">
     <ListItem>
       <LinkButton on:click={handleExternalLink}>
         {env.newsJournalFullName}
@@ -49,20 +49,24 @@
     </ListItem>
 
     <ListItem>
+      <Link href={'/' + $locale + Path.TOPICS}>{$LL.menu.topics()}</Link>
+    </ListItem>
+
+    <ListItem>
+      <Link href={'/' + $locale + Path.POLLS}>{$LL.menu.polls()}</Link>
+    </ListItem>
+  </ul>
+
+  <ul class="nav-link-group">
+    <ListItem>
       <Link href={'/' + $locale + Path.PLATFORM_USERS}>
         {$LL.menu.platformUsers()}
       </Link>
     </ListItem>
 
     <ListItem>
-      <Link href={'/' + $locale + Path.TOPICS}>{$LL.menu.topics()}</Link>
-    </ListItem>
-  </List>
-
-  <List style="min-width: 180px;">
-    <ListItem>
-      <Link href={'/' + $locale + Path.PLATFORM_INVITATIONS}>
-        {$LL.menu.invitations()}
+      <Link href={'/' + $locale + Path.PLATFORM_SETTINGS}>
+        {$LL.menu.adminSettings()}
       </Link>
     </ListItem>
 
@@ -71,13 +75,9 @@
         {$LL.menu.userSettings()}
       </Link>
     </ListItem>
+  </ul>
 
-    <ListItem>
-      <Link href={'/' + $locale + Path.POLLS}>{$LL.menu.polls()}</Link>
-    </ListItem>
-  </List>
-
-  <List style="min-width: 180px;">
+  <ul class="nav-link-group">
     <ListItem>
       <Link href={'/' + $locale + Path.NEWS}>{$LL.menu.news()}</Link>
     </ListItem>
@@ -89,7 +89,7 @@
     <ListItem>
       <Link href={'/' + $locale + Path.SIGN_IN}>{$LL.menu.logout()}</Link>
     </ListItem>
-  </List>
+  </ul>
 </ListGroup>
 
 <FullscreenModal
@@ -119,3 +119,12 @@
     </ListItem>
   </List>
 </FullscreenModal>
+
+<style lang="scss">
+  .nav-link-group {
+    min-width: 220px;
+    padding-left: var(--spacing-s2);
+    border-left: 6px solid var(--color-border);
+    list-style: none;
+  }
+</style>

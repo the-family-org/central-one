@@ -62,8 +62,8 @@
         <ActivityListItem>
           <span slot="date">
             <span class="date">
-              <b>{activity.day}</b>.{activity.month}
-            </span>.2022
+              <b>{activity.day}</b>.{activity.month}</span
+            >.2022
           </span>
 
           <span slot="user">@{activity.user}</span>

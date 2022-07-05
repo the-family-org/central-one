@@ -9,12 +9,13 @@
   import { TitleH1 } from '$components/TitleH1';
   import { TitleH3 } from '$components/TitleH3';
   import { LeftBorderDiv } from '$components/LeftBorderDiv';
+  import Link from '$shared/components/Link/link.component.svelte';
 
   enum Section {
     PAGE_ONE = 'page-one',
     PAGE_TWO = 'page-two',
     PAGE_THREE = 'page-three',
-    PAGE_FOUR = 'page-four',
+    CHAT_PAGE = 'chat-page',
   }
 
   let currentSection: Section = Section.PAGE_ONE;
@@ -31,43 +32,52 @@
   }
 </script>
 
-<Header sessionTitle={$LL.topics.topics()} />
+{#if currentSection !== Section.CHAT_PAGE}
+  <Header sessionTitle={$LL.topics.topics()} />
+{/if}
 
 <main class="main">
-  <div class="menu">
-    <LinkButton
-      linkType={currentSection === Section.PAGE_ONE ? 'current' : 'default'}
-      on:click={() => setSection(Section.PAGE_ONE)}
-    >
-      {$LL.topics.example.intro()}
-    </LinkButton>
+  {#if currentSection !== Section.CHAT_PAGE}
+    <div class="menu">
+      <div class="menu-pages-container">
+        <LinkButton
+          linkType={currentSection === Section.PAGE_ONE ? 'current' : 'default'}
+          on:click={() => setSection(Section.PAGE_ONE)}
+        >
+          {$LL.topics.example.intro()}
+        </LinkButton>
 
-    <LinkButton
-      linkType={currentSection === Section.PAGE_TWO ? 'current' : 'default'}
-      on:click={() => setSection(Section.PAGE_TWO)}
-    >
-      {$LL.topics.example.coatOfArms()}
-    </LinkButton>
+        <LinkButton
+          linkType={currentSection === Section.PAGE_TWO ? 'current' : 'default'}
+          on:click={() => setSection(Section.PAGE_TWO)}
+        >
+          {$LL.topics.example.coatOfArms()}
+        </LinkButton>
 
-    <LinkButton
-      linkType={currentSection === Section.PAGE_THREE ? 'current' : 'default'}
-      on:click={() => setSection(Section.PAGE_THREE)}
-    >
-      {$LL.topics.example.page()} 3
-    </LinkButton>
+        <LinkButton
+          linkType={currentSection === Section.PAGE_THREE
+            ? 'current'
+            : 'default'}
+          on:click={() => setSection(Section.PAGE_THREE)}
+        >
+          {$LL.topics.example.page()} 3
+        </LinkButton>
+      </div>
 
-    <LinkButton
-      linkType={currentSection === Section.PAGE_FOUR ? 'current' : 'default'}
-      on:click={() => setSection(Section.PAGE_FOUR)}
-    >
-      {$LL.topics.example.page()} 4
-    </LinkButton>
-  </div>
+      <div class="menu-bottom-pages-container">
+        <LinkButton on:click={() => setSection(Section.CHAT_PAGE)}>
+          Chat
+        </LinkButton>
+      </div>
+    </div>
+  {/if}
 
   {#if currentSection === Section.PAGE_ONE}
     <div class="content">
       <div>
-        <TitleH1 marginBottom="s">{$LL.topics.example.topicTitle()}</TitleH1>
+        <TitleH1 strong marginBottom="s">
+          {$LL.topics.example.topicTitle()}
+        </TitleH1>
 
         <Paragraph>
           {$LL.topics.example.introMessage()}
@@ -86,13 +96,6 @@
         <TitleH1 strong marginBottom="s">
           {$LL.topics.example.doeFamilyCoatOfArms()}
         </TitleH1>
-
-        <Paragraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-          quaerat odio beatae libero fugit architecto quis ad minus nesciunt,
-          repellat commodi quidem! Eos, esse totam praesentium corporis
-          repudiandae ut voluptatem.
-        </Paragraph>
       </div>
 
       <div class="row">
@@ -102,9 +105,7 @@
           </TitleH3>
 
           <Paragraph marginBottom="s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            quaerat odio beatae libero fugit architecto quis ad minus nesciunt,
-            repellat commodi...
+            {$LL.topics.example.traditionalCoatOfArmsMessage()}
           </Paragraph>
         </div>
 
@@ -125,9 +126,7 @@
           </TitleH3>
 
           <Paragraph marginBottom="s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            quaerat odio beatae libero fugit architecto quis ad minus nesciunt,
-            repellat commodi...
+            {$LL.topics.example.funCoatOfArmsMessage()}
           </Paragraph>
         </div>
 
@@ -148,9 +147,7 @@
           </TitleH3>
 
           <Paragraph marginBottom="s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            quaerat odio beatae libero fugit architecto quis ad minus nesciunt,
-            repellat commodi...
+            {$LL.topics.example.mourningCoatOfArmsMessage()}
           </Paragraph>
         </div>
 
@@ -168,26 +165,47 @@
 
   {#if currentSection === Section.PAGE_THREE}
     <div class="content">
-      <div>
-        <TitleH1 marginBottom="s">{$LL.topics.example.page()} 3</TitleH1>
-
-        <Paragraph>Lorem ipsum dolor sit amet consectetur...</Paragraph>
-      </div>
+      <Paragraph>{$LL.topics.example.anotherPageMessage()}</Paragraph>
     </div>
   {/if}
 
-  {#if currentSection === Section.PAGE_FOUR}
-    <div class="content">
-      <div>
-        <TitleH1 marginBottom="s">{$LL.topics.example.page()} 4</TitleH1>
+  {#if currentSection === Section.CHAT_PAGE}
+    <div class="chat-page">
+      <div class="chat-header">
+        <div class="chat-back-button">
+          <LinkButton on:click={() => setSection(Section.PAGE_ONE)}>
+            <b>☚</b> Voltar
+          </LinkButton>
+        </div>
 
-        <Paragraph>Lorem ipsum dolor sit amet consectetur...</Paragraph>
+        <div>
+          {$LL.topics.example.topicTitle()}
+        </div>
+      </div>
+
+      <div class="chat-messages-container">
+        <div class="chat-messages">
+          <div class="message-author-line">
+            <span class="message-author">@jane</span>, {$LL.topics.example.chatMessageDate()}
+          </div>
+          <div class="message">{$LL.topics.example.chatMessage()}</div>
+        </div>
+      </div>
+
+      <div class="chat-bottom-container">
+        <div class="chat-message-input">
+          <Paragraph>{$LL.topics.example.placeToWriteMessages()}</Paragraph>
+        </div>
+
+        <div class="chat-button">➤</div>
       </div>
     </div>
   {/if}
 </main>
 
-<Footer marginTop={false} />
+{#if currentSection !== Section.CHAT_PAGE}
+  <Footer marginTop={false} />
+{/if}
 
 <style lang="scss">
   .main {
@@ -200,16 +218,34 @@
   .menu {
     display: flex;
     flex-direction: column;
+    overflow: auto;
 
-    min-width: 270px;
+    min-width: 220px;
 
     height: auto;
     padding: var(--spacing-m);
-    gap: var(--gap-s);
     border-right: 1px solid var(--color-border);
     border-left: none;
     border-top: none;
     border-bottom: none;
+  }
+
+  .menu-pages-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    gap: var(--gap-s);
+    padding-bottom: var(--spacing-m);
+  }
+
+  .menu-bottom-pages-container {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: var(--spacing-s);
+    border-top: 1px solid var(--color-border);
+    gap: var(--gap-s);
   }
 
   .content {
@@ -220,6 +256,80 @@
     padding: var(--spacing-l3) var(--spacing-l) var(--spacing-l5)
       var(--spacing-l);
     gap: var(--gap-l5);
+  }
+
+  .chat-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
+  }
+
+  .chat-header {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    padding: var(--spacing-s2);
+    border-bottom: 1px solid var(--color-border);
+    gap: var(--gap-s);
+  }
+
+  .chat-back-button {
+    padding-right: var(--spacing-s);
+    border-right: 1px solid var(--color-border);
+  }
+
+  .chat-messages-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    flex: 1;
+    padding: var(--spacing-m);
+    gap: var(--gap-m);
+  }
+
+  .chat-bottom-container {
+    display: flex;
+    flex-direction: row;
+
+    max-height: 90px;
+    min-height: 90px;
+    height: 90px;
+    padding: var(--spacing-m);
+    gap: var(--gap-m);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .chat-message-input {
+    display: flex;
+    flex-direction: row;
+
+    flex: 1;
+  }
+
+  .chat-button {
+    cursor: pointer;
+  }
+
+  .message-author-line {
+    font-size: var(--font-size-s);
+    color: var(--color-neutral);
+  }
+
+  .message-author {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+  }
+
+  .message {
+    padding-left: var(--spacing-s);
   }
 
   .row {
@@ -235,8 +345,11 @@
     }
 
     .menu {
+      max-height: 160px;
+
+      padding: var(--spacing-s);
       border-bottom: 1px solid var(--color-border);
-      border-left: none;
+      border-right: none;
     }
   }
 

@@ -2,22 +2,25 @@
   import { page } from '$app/stores';
   import { LL } from '$lang/i18n-svelte';
 
+  import { DateInput } from '$components/DateInput';
+  import { EmailInput } from '$components/EmailInput';
   import { Footer } from '$components/Footer';
   import { Header } from '$components/Header';
+  import { LeftBorderDiv } from '$components/LeftBorderDiv';
   import { LinkButton } from '$components/LinkButton';
   import { Paragraph } from '$components/Paragraph';
+  import { PasswordInput } from '$components/PasswordInput';
+  import { TextInput } from '$components/TextInput';
   import { TitleH1 } from '$components/TitleH1';
   import { TitleH3 } from '$components/TitleH3';
-  import { Radio } from '$components/Radio';
-  import { Checkbox } from '$components/Checkbox';
+  import { UploadInput } from '$components/UploadInput';
 
   import { ThemeContent } from '$modules/theme/components/ThemeContent';
 
   enum Section {
     GENERAL = 'general',
+    PROFILE_IMAGE = 'profile-image',
     THEME = 'theme',
-    ACCOUNT = 'account',
-    LOREM_IPSUM = 'lorem-ipsum',
   }
 
   let currentSection: Section = Section.GENERAL;
@@ -32,6 +35,8 @@
   if (urlSection && sectionValues.includes(urlSection as unknown as Section)) {
     currentSection = urlSection as Section;
   }
+
+  let files: FileList;
 </script>
 
 <Header sessionTitle={$LL.userSettings.userSettings()} />
@@ -42,28 +47,23 @@
       linkType={currentSection === Section.GENERAL ? 'current' : 'default'}
       on:click={() => setSection(Section.GENERAL)}
     >
-      {$LL.userSettings.generalSettings()}
+      {$LL.userSettings.menu.general()}
+    </LinkButton>
+
+    <LinkButton
+      linkType={currentSection === Section.PROFILE_IMAGE
+        ? 'current'
+        : 'default'}
+      on:click={() => setSection(Section.PROFILE_IMAGE)}
+    >
+      {$LL.userSettings.menu.profileImage()}
     </LinkButton>
 
     <LinkButton
       linkType={currentSection === Section.THEME ? 'current' : 'default'}
       on:click={() => setSection(Section.THEME)}
     >
-      {$LL.userSettings.theme()}
-    </LinkButton>
-
-    <LinkButton
-      linkType={currentSection === Section.ACCOUNT ? 'current' : 'default'}
-      on:click={() => setSection(Section.ACCOUNT)}
-    >
-      {$LL.userSettings.account()}
-    </LinkButton>
-
-    <LinkButton
-      linkType={currentSection === Section.LOREM_IPSUM ? 'current' : 'default'}
-      on:click={() => setSection(Section.LOREM_IPSUM)}
-    >
-      Lorem ipsum
+      {$LL.userSettings.menu.theme()}
     </LinkButton>
   </div>
 
@@ -74,70 +74,101 @@
           {$LL.userSettings.generalSettings()}
         </TitleH1>
 
-        <Paragraph>Lorem ipsum dolor sit amet consectetur...</Paragraph>
+        <Paragraph>{$LL.userSettings.generalSettingsMessage()}</Paragraph>
       </div>
 
       <div class="content-group">
-        <TitleH3 strong>Lorem ipsum 1</TitleH3>
+        <div class="form-item">
+          <label for="nickname" class="label-item">
+            <TitleH3 strong>Nickname</TitleH3>
+          </label>
 
-        <div class="row">
-          <Radio name="lorem-ipsum-1" value="" />
-          <span>Lorem ipsum</span>
-        </div>
-
-        <div class="row">
-          <Radio name="lorem-ipsum-1" value="" />
-          <span>Lorem ipsum</span>
+          <TextInput id="nickname" value="@john" style="max-width: 140px;" />
         </div>
       </div>
 
       <div class="content-group">
-        <TitleH3 strong>Lorem ipsum 2</TitleH3>
+        <div class="form-item">
+          <label for="full-name" class="label-item">
+            <TitleH3 strong>{$LL.userSettings.fullName()}</TitleH3>
+          </label>
 
-        <div class="row">
-          <Checkbox value="" />
-          <span>Lorem ipsum</span>
-        </div>
-
-        <div class="row">
-          <Checkbox value="" />
-          <span>Lorem ipsum</span>
+          <TextInput id="full-name" value="John Philip Arthur Doe" />
         </div>
       </div>
+
+      <div class="content-group">
+        <div class="form-item">
+          <label for="email" class="label-item">
+            <TitleH3 strong>{$LL.userSettings.email()}</TitleH3>
+          </label>
+
+          <EmailInput id="email" value="johndoe@email.com" />
+        </div>
+      </div>
+
+      <div class="content-group">
+        <div class="form-item">
+          <label for="password" class="label-item">
+            <TitleH3 strong>Password</TitleH3>
+          </label>
+
+          <PasswordInput id="password" value="12345678" />
+        </div>
+      </div>
+
+      <div class="content-group">
+        <div class="form-item">
+          <label for="birth-date" class="label-item">
+            <TitleH3 strong>{$LL.userSettings.birthDate()}</TitleH3>
+          </label>
+
+          <DateInput
+            id="birth-date"
+            value="1984-06-22"
+            style="max-width: 200px;"
+          />
+        </div>
+      </div>
+
+      <LeftBorderDiv style="max-width: 580px; margin-top: 40px;">
+        {$LL.common.warningMessage3()}
+      </LeftBorderDiv>
+    </div>
+  {/if}
+
+  {#if currentSection === Section.PROFILE_IMAGE}
+    <div class="content">
+      <div class="content-group">
+        <TitleH1>{$LL.userSettings.profileImage()}</TitleH1>
+
+        <Paragraph>
+          {$LL.userSettings.profileImageMessage()}
+        </Paragraph>
+      </div>
+
+      <div class="content-group">
+        <UploadInput bind:files />
+      </div>
+
+      <div class="content-group">
+        <img
+          src="/images/small-profile.example.svg"
+          alt="User Profile"
+          width="368"
+          height="368"
+        />
+      </div>
+
+      <LeftBorderDiv style="max-width: 580px; margin-top: 40px;">
+        {$LL.common.warningMessage3()}
+      </LeftBorderDiv>
     </div>
   {/if}
 
   {#if currentSection === Section.THEME}
     <div class="theme-content">
       <ThemeContent />
-    </div>
-  {/if}
-
-  {#if currentSection === Section.ACCOUNT}
-    <div class="content">
-      <div>
-        <TitleH1 strong marginBottom="s">
-          {$LL.userSettings.account()}
-        </TitleH1>
-
-        <Paragraph marginBottom="s">
-          {@html $LL.userSettings.accountTypeMessage()}
-        </Paragraph>
-
-        <Paragraph marginBottom="s">
-          Lorem ipsum dolor sit amet consectetur...
-        </Paragraph>
-      </div>
-    </div>
-  {/if}
-
-  {#if currentSection === Section.LOREM_IPSUM}
-    <div class="content">
-      <div>
-        <TitleH1 strong marginBottom="s">Lorem ipsum</TitleH1>
-
-        <Paragraph>Lorem ipsum dolor sit amet consectetur...</Paragraph>
-      </div>
     </div>
   {/if}
 </main>
@@ -156,8 +187,7 @@
     display: flex;
     flex-direction: column;
 
-    min-width: 270px;
-
+    min-width: 220px;
     height: auto;
     padding: var(--spacing-m);
     gap: var(--gap-s);
@@ -179,6 +209,7 @@
     display: flex;
     flex-direction: column;
 
+    max-width: 700px;
     width: 100%;
     padding: var(--spacing-l) var(--spacing-l) var(--spacing-l5)
       var(--spacing-l);
@@ -192,11 +223,13 @@
     gap: var(--gap-m);
   }
 
-  .row {
+  .form-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
 
-    gap: var(--gap-s);
+  .label-item {
+    font-weight: var(--font-weight-bold);
   }
 
   @media (max-width: 860px) {

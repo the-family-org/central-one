@@ -3,12 +3,12 @@
 
   import { LL, locale } from '$lang/i18n-svelte';
   import { currentTheme } from '$stores';
+  import { Path } from '$config';
 
   import { Link } from '../Link';
   import { List } from '../List';
   import { ListGroup } from '../ListGroup';
   import { TitleH3 } from '../TitleH3';
-  import { Path } from '$config';
 
   let currentThemeKey: ThemeNamesType;
 
@@ -33,22 +33,25 @@
 <ListGroup>
   <List fontSize="s">
     <li>
-      {$LL.common.user()}: <Link href={'/' + $locale + Path.USER_PROFILE}
-        >@john</Link
-      >
+      {$LL.common.user()}: <Link href={'/' + $locale + Path.USER_PROFILE}>
+        @john
+      </Link>
     </li>
 
     <li>
-      {$LL.account.account()}: <Link
-        href={'/' + $locale + Path.USER_SETTINGS + '?section=account'}
-        >{$LL.account.accountType.normalMember()}</Link
+      {$LL.accounts.account()}: <Link
+        href={'/' + $locale + Path.PLATFORM_ACCOUNTS}
       >
+        {$LL.accounts.accountType.fullMember()}
+      </Link>
     </li>
 
     <li>
-      {$LL.theme.theme()}: <Link href={'/' + $locale + Path.USER_SETTINGS_THEME}
-        >{$LL.theme.themeName[currentThemeKey]()}</Link
+      {$LL.theme.theme()}: <Link
+        href={'/' + $locale + Path.USER_SETTINGS_THEME}
       >
+        {$LL.theme.themeName[currentThemeKey]()}
+      </Link>
     </li>
   </List>
 </ListGroup>

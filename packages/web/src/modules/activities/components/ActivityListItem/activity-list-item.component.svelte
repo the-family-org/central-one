@@ -27,8 +27,9 @@
 <ListItem>
   <Line neutral heightSize="s3" pageContentSize={false} />
 
-  <div class="activity-title">
-    <slot name="date" />, <slot name="user" /> - <slot name="activity" />
+  <div class="activity-header">
+    <slot name="date" />, <slot name="user" /> -
+    <span class="activity"><slot name="activity" /></span>
   </div>
 
   <div class="activity-extra-data">
@@ -37,8 +38,12 @@
 </ListItem>
 
 <style lang="scss">
-  .activity-title {
+  .activity-header {
     margin-top: var(--spacing-s2);
+  }
+
+  .activity {
+    font-weight: var(--font-weight-bold);
   }
 
   .activity-extra-data {

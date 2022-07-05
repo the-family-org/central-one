@@ -18,8 +18,19 @@ export const topics = {
     coatOfArms: 'Coat of arms',
     doeFamilyCoatOfArms: 'Doe Family coat of arms',
     traditionalCoatOfArms: 'Traditional coat of arms',
+    traditionalCoatOfArmsMessage:
+      'This is a reinterpretation of the old Doe Family coat of arms. This coat of arms is versatile and can be used in almost any context.',
     funCoatOfArms: 'Fun coat of arms',
+    funCoatOfArmsMessage:
+      'This is a lively colored coat of arms and was created to be used in fun contexts such as parties and recreational events.',
     mourningCoatOfArms: 'Mourning coat of arms',
+    mourningCoatOfArmsMessage:
+      'This is a coat of arms with sober colors to be used in mourning circumstances.',
+    anotherPageMessage:
+      "This is another example of a page created within the topic by one of the platform's members. Because any member can create pages within the topics created by other members.",
+    chatMessageDate: 'today at 3 am',
+    chatMessage: 'Example of message sent',
+    placeToWriteMessages: 'Place to write messages',
   },
   warningMessage: {
     incompleteExample:
@@ -30,4 +41,5 @@ export const topics = {
     openTheExample: 'Open the example',
     doNotOpen: 'Do not open',
   },
+  back: 'back',
 };

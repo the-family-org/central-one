@@ -6,6 +6,7 @@
   import { Button } from '$components/Button';
   import { Checkbox } from '$components/Checkbox';
   import { Footer } from '$components/Footer';
+  import { FormUserTypesWithAccess } from '$components/FormUserTypesWithAccess';
   import { Header } from '$components/Header';
   import { LeftBorderDiv } from '$components/LeftBorderDiv';
   import { Line } from '$components/Line';
@@ -16,13 +17,72 @@
   import { Textarea } from '$components/Textarea';
   import { TextInput } from '$components/TextInput';
   import { TitleH1 } from '$components/TitleH1';
-  import { TitleH3 } from '$components/TitleH3';
+  import { TitleH2 } from '$components/TitleH2';
   import { UploadInput } from '$components/UploadInput';
 
+  let selectedCategoryType: string;
   let selectedNewsType: string;
   let files: FileList;
   let description: string = '';
   $: descriptionLength = description.length;
+
+  const categories = [
+    'sports',
+    'sports',
+    'memories',
+    'books',
+    'gastronomy',
+    'series',
+    'movies',
+    'music',
+    'food',
+    'culture',
+    'health',
+    'tourism',
+    'crime',
+    'science',
+    'technology',
+    'business',
+    'economy',
+    'politics',
+    'humor',
+    'meteorology',
+  ] as const;
+
+  const feelings = [
+    'celebrant',
+    'passionate',
+    'happy',
+    'funny',
+    'cool',
+    'silly',
+    'excited',
+    'energized',
+    'powerful',
+    'peaceful',
+    'optimistic',
+    'thankful',
+    'sensitive',
+    'calm',
+    'anxious',
+    'sad',
+    'disappointed',
+    'angry',
+    'proud',
+    'surprised',
+    'shocked',
+    'confused',
+    'scared',
+    'bored',
+    'sick',
+    'seasick',
+    'jealous',
+    'curious',
+    'embarrassed',
+    'kind',
+    'alert',
+    'investigative',
+  ] as const;
 </script>
 
 <Header sessionTitle={$LL.news.news()} />
@@ -34,7 +94,7 @@
   <form class="form">
     <div class="step">
       <label for="news-title-input">
-        <TitleH3 strong>{$LL.news.createNews.title()}</TitleH3>
+        <TitleH2 strong>{$LL.news.createNews.title()}</TitleH2>
       </label>
 
       <TextInput id="news-title-input" value="" />
@@ -42,18 +102,18 @@
 
     <div class="step">
       <label for="image-file">
-        <TitleH3 strong>{$LL.news.createNews.image()}</TitleH3>
+        <TitleH2 strong>{$LL.news.createNews.image()}</TitleH2>
       </label>
 
       <UploadInput id="image-file" bind:files />
     </div>
 
     <div class="step">
-      <TitleH3 strong
-        >{$LL.news.createNews.mainNewsOfTheEdition.mainNewsOfTheEdition()}</TitleH3
-      >
+      <TitleH2 strong>
+        {$LL.news.createNews.mainNewsOfTheEdition.mainNewsOfTheEdition()}
+      </TitleH2>
 
-      <Paragraph>
+      <Paragraph marginBottom="s3">
         {@html $LL.news.createNews.mainNewsOfTheEdition.mainNewsOfTheEditionMessage()}
       </Paragraph>
 
@@ -75,25 +135,25 @@
 
     <div class="step short-size">
       <label for="news-category">
-        <TitleH3 strong>{$LL.news.createNews.category.category()}</TitleH3>
+        <TitleH2 strong>{$LL.news.createNews.category.category()}</TitleH2>
       </label>
 
-      <Select bind:value={selectedNewsType} id="news-category">
-        <option value="lorem-ipsum-1" selected
-          >{$LL.news.createNews.category.sports()}</option
-        >
-        <option value="lorem-ipsum-2"
-          >{$LL.news.createNews.category.politics()}</option
-        >
-        <option value="lorem-ipsum-3">Lorem ipsum</option>
-        <option value="lorem-ipsum-4">Lorem ipsum</option>
-        <option value="lorem-ipsum-5">Lorem ipsum</option>
+      <Select bind:value={selectedCategoryType} id="news-category">
+        <option value="others" selected>
+          {$LL.news.createNews.category.other()}
+        </option>
+
+        {#each categories as category}
+          <option value={category + '-category'}>
+            {$LL.news.createNews.category[category]()}
+          </option>
+        {/each}
       </Select>
     </div>
 
     <div class="step short-size">
       <label for="news-type">
-        <TitleH3 strong>{$LL.news.createNews.newsType.newsType()}</TitleH3>
+        <TitleH2 strong>{$LL.news.createNews.newsType.newsType()}</TitleH2>
       </label>
 
       <Paragraph>
@@ -101,27 +161,24 @@
       </Paragraph>
 
       <Select bind:value={selectedNewsType} id="news-type">
-        <option value="lorem-ipsum-1" selected
-          >{$LL.news.createNews.newsType.happiness()}</option
-        >
-        <option value="lorem-ipsum-2"
-          >{$LL.news.createNews.newsType.anger()}</option
-        >
-        <option value="lorem-ipsum-3"
-          >{$LL.news.createNews.newsType.sadness()}</option
-        >
-        <option value="lorem-ipsum-4">Lorem ipsum</option>
-        <option value="lorem-ipsum-5">Lorem ipsum</option>
-        <option value="lorem-ipsum-6">Lorem ipsum</option>
+        <option value="other-feeling" selected>
+          {$LL.news.createNews.feeling.other()}
+        </option>
+
+        {#each feelings as feeling}
+          <option value={feeling + '-feeling'}>
+            {$LL.news.createNews.feeling[feeling]()}
+          </option>
+        {/each}
       </Select>
     </div>
 
     <div class="step">
-      <TitleH3 strong
-        >{$LL.news.createNews.contentCharacteristics.contentCharacteristics()}</TitleH3
-      >
+      <TitleH2 strong>
+        {$LL.news.createNews.contentCharacteristics.contentCharacteristics()}
+      </TitleH2>
 
-      <Paragraph>
+      <Paragraph marginBottom="s3">
         {$LL.news.createNews.contentCharacteristics.contentCharacteristicsMessage()}
       </Paragraph>
 
@@ -139,17 +196,16 @@
         <Checkbox id="group-member-is-protagonist" value="" />
         {$LL.news.createNews.contentCharacteristics.theProtagonistIsAMemberOfThePlatform()}
       </label>
-
-      <label for="loooooorem-ipsuuuum" class="row">
-        <Checkbox id="loooooorem-ipsuuuum" value="" />
-        Lorem ipsum dolor sit amet
-      </label>
     </div>
 
     <div class="step">
-      <TitleH3 strong
-        >{$LL.news.createNews.whenWillBePublished.whenWillBePublished()}</TitleH3
-      >
+      <FormUserTypesWithAccess />
+    </div>
+
+    <div class="step">
+      <TitleH2 strong>
+        {$LL.news.createNews.whenWillBePublished.whenWillBePublished()}
+      </TitleH2>
 
       <label for="draft-publication-date" class="row">
         <Radio
@@ -178,9 +234,9 @@
 
     <div class="step">
       <label for="short-description">
-        <TitleH3 strong
-          >{$LL.news.createNews.shortDescription.shortDescription()}</TitleH3
-        >
+        <TitleH2 strong>
+          {$LL.news.createNews.shortDescription.shortDescription()}
+        </TitleH2>
       </label>
 
       <Paragraph>
@@ -201,7 +257,7 @@
 
     <div class="step">
       <label for="news-content">
-        <TitleH3 strong>{$LL.news.createNews.content()}</TitleH3>
+        <TitleH2 strong>{$LL.news.createNews.content()}</TitleH2>
       </label>
 
       <Textarea rows={14} id="news-content" value="" />

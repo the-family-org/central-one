@@ -1,7 +1,17 @@
 export const userSettings = {
   userSettings: 'Settings',
-  generalSettings: 'General settings',
+  menu: {
+    general: 'General',
+    profileImage: 'Profile image',
+    theme: 'Theme',
+  },
+  generalSettings: 'Account settings',
+  generalSettingsMessage: 'Configure your user profile data here.',
+  profileImage: 'Profile image',
+  profileImageMessage: 'Upload an image to your user profile.',
   theme: 'Theme',
-  account: 'Account',
-  accountTypeMessage: 'You have an account of the type: <b>MEMBER</b>',
+  fullName: 'Full name',
+  email: 'Email',
+  password: 'Password',
+  birthDate: 'Birth date',
 };

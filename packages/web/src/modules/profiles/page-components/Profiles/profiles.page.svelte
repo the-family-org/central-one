@@ -18,23 +18,29 @@
 
   import { UserAsListItem } from '../../components/UserAsListItem';
 
+  interface UserType {
+    color: '1' | '2' | '3' | '4';
+    nickname: string;
+    name: string;
+  }
+
   let nonExistingExampleStatus = false;
 
   const handleNonExistingExample = () => {
     nonExistingExampleStatus = !nonExistingExampleStatus;
   };
 
-  const members: { color: '1' | '2' | '3' | '4'; name: string }[] = [
-    { color: '4', name: '@jane - Jane Doe' },
-    { color: '4', name: '@geo - George Doe' },
-    { color: '2', name: '@oli - Olivia Doe' },
-    { color: '3', name: '@ame - Amelia Doe' },
-    { color: '4', name: '@isa - Isabella Doe' },
+  const members: UserType[] = [
+    { color: '4', nickname: 'jane', name: 'Jane Doe' },
+    { color: '4', nickname: 'geo', name: 'George Doe' },
+    { color: '2', nickname: 'oli', name: 'Olivia Doe' },
+    { color: '3', nickname: 'ame', name: 'Amelia Doe' },
+    { color: '4', nickname: 'isa', name: 'Isabella Doe' },
   ];
 
-  const guests: { color: '1' | '2' | '3' | '4'; name: string }[] = [
-    { color: '2', name: '@rub - Rubeus Hagrid' },
-    { color: '3', name: '@luna - Luna Lovegood' },
+  const guests: UserType[] = [
+    { color: '2', nickname: 'rub', name: 'Rubeus Hagrid' },
+    { color: '3', nickname: 'luna', name: 'Luna Lovegood' },
   ];
 </script>
 
@@ -43,7 +49,9 @@
 
 <PageContent>
   <div class="group-container">
-    <TitleH1 marginBottom="m">{$LL.profiles.platformUsers()}</TitleH1>
+    <TitleH1 marginTop="s" marginBottom="m">
+      {$LL.profiles.platformUsers()}
+    </TitleH1>
 
     <List rowGap="l2">
       <ListItem>
@@ -60,10 +68,12 @@
               height="68"
             />
 
-            <span slot="user-data">@john - John Doe</span>
+            <div slot="user-data" class="user-data">
+              John Doe - <b>@john</b>
+            </div>
 
             <Badge slot="user-info" status="primary">
-              {$LL.account.accountType.privilegedMember()}
+              {$LL.accounts.accountType.fullMember()}
             </Badge>
           </UserAsListItem>
         </Link>
@@ -73,10 +83,12 @@
         <ListItem>
           <LinkButton on:click={handleNonExistingExample}>
             <UserAsListItem bgColor={member.color}>
-              <span slot="user-data">{member.name}</span>
+              <div slot="user-data" class="user-data">
+                {member.name} - <b>@{member.nickname}</b>
+              </div>
 
               <Badge slot="user-info" status="primary">
-                {$LL.account.accountType.normalMember()}
+                {$LL.accounts.accountType.fullMember()}
               </Badge>
             </UserAsListItem>
           </LinkButton>
@@ -89,10 +101,12 @@
         <ListItem>
           <LinkButton on:click={handleNonExistingExample}>
             <UserAsListItem bgColor={guest.color}>
-              <span slot="user-data">{guest.name}</span>
+              <div slot="user-data" class="user-data">
+                {guest.name} - <b>@{guest.nickname}</b>
+              </div>
 
               <Badge slot="user-info" status="neutral">
-                {$LL.account.accountType.guest()}
+                {$LL.accounts.accountType.guest()}
               </Badge>
             </UserAsListItem>
           </LinkButton>
@@ -143,5 +157,9 @@
     flex-direction: column;
 
     gap: var(--gap-m);
+  }
+
+  .user-data {
+    margin-bottom: var(--spacing-s3);
   }
 </style>

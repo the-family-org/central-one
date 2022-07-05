@@ -1,7 +1,9 @@
 import type { BaseTranslation } from '../i18n-types';
 
+import { accounts } from './accounts';
 import { activities } from './activities';
 import { feedback } from './feedback';
+import { forms } from './forms';
 import { homePage } from './home-page';
 import { invitations } from './invitations';
 import { memos } from './memos';
@@ -30,6 +32,7 @@ const en: BaseTranslation = {
     login: 'Login',
     logout: 'Logout',
     settings: 'Settings',
+    history: 'History',
     sectionName: 'Section name',
     homePage: 'Home page',
     usefulLinks: 'Useful links',
@@ -84,32 +87,22 @@ const en: BaseTranslation = {
   },
   menu: {
     menu: 'Menu',
-    adminSettings: 'Admin settings',
+    adminSettings: 'Platform settings',
     feedback: 'Feedback',
     activitiesHistory: 'History',
-    platformUsers: 'Users',
+    platformUsers: 'All users',
     topics: 'Topics',
     invitations: 'Invitations',
-    userSettings: 'Settings',
+    userSettings: 'User settings',
     polls: 'Polls',
     memorandum: 'Memorandum',
     logout: 'Logout',
     news: 'News',
   },
-  account: {
-    account: 'Account',
-    accounts: 'Accounts',
-    accountType: {
-      admin: 'Admin',
-      maintainer: 'Maintainer',
-      developer: 'Developer',
-      normalMember: 'Member ★',
-      privilegedMember: 'Member ★',
-      guest: 'Guest',
-    },
-  },
+  accounts,
   activities,
   feedback,
+  forms,
   homePage,
   invitations,
   memos,

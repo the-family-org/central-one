@@ -5,6 +5,22 @@ export const feedback: Translation['feedback'] = {
     title: 'Um botão cor de rosa poderia ser criado',
     message:
       'Acho a cor dos botões da plataforma muito feia, então eu sugiro uma alteração de cor. Acho que deveria existir a possibilidade aos usuários de escolherem a cor de seus botões nas configurações. Eu adoraria poder clicar em botões cor de rosa.',
+    answerOne:
+      'Legal essa ideia. Será quem algum desenvolvedor poderia resolver essa questão?',
+    answerTwo:
+      'Eu também gostei muito dessa ideia. Vou tentar implementar o código desse botão cor de rosa, mas parece muito complicado, não sei se vou conseguir.',
+  },
+  exampleTwo: {
+    title: 'Nova funcionalidade para registrar árvore genealógica?',
+    message: '',
+  },
+  exampleThree: {
+    title: 'Erro de ortografia na página inicial',
+    message: '',
+  },
+  exampleFour: {
+    title: 'Podemos criar nossa versão do Netflix?',
+    message: '',
   },
   feedback: 'Feedback',
   description:

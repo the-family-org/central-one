@@ -3,6 +3,22 @@ export const feedback = {
     title: 'A pink button could be created',
     message:
       'I find the color of the platform buttons very ugly, so I suggest a color change. I think there should be a possibility for users to choose the color of their buttons in the settings. I would love to be able to click pink buttons.',
+    answerOne:
+      'This idea is cool. Will any developer be able to solve this issue?',
+    answerTwo:
+      "I really liked this idea too. I'll try to implement the code for this pink button, but it seems too complicated, I don't know if I'll be able to.",
+  },
+  exampleTwo: {
+    title: 'New functionality to register family tree?',
+    message: '',
+  },
+  exampleThree: {
+    title: 'Spelling error on the home page',
+    message: '',
+  },
+  exampleFour: {
+    title: 'Can we create our version of Netflix?',
+    message: '',
   },
   feedback: 'Feedback',
   description:
