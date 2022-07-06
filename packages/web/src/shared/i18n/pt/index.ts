@@ -19,7 +19,7 @@ import { userSettings } from './user-settings';
 
 const pt: Translation = {
   common: {
-    clickHereToUpload: 'Clique aqui para upload',
+    clickHereToUpload: 'Clique aqui para efetuar o upload',
     user: 'Usuário',
     users: 'Usuários',
     name: 'Nome',

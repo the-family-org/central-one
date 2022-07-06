@@ -19,9 +19,9 @@
 <Header sessionTitle={$LL.polls.polls()} />
 <Line />
 
-<PageContent rowGap="l4">
+<PageContent rowGap="l3">
   <div class="page-group-container">
-    <TitleH1 strong marginTop="m" marginBottom="l">
+    <TitleH1 strong marginTop="s3" marginBottom="s3">
       {$LL.polls.createPoll()}
     </TitleH1>
   </div>

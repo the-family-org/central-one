@@ -6,7 +6,7 @@
   type $$Props = Component<HTMLAnchorElement> & LinkButtonProps;
 
   export let linkType: LinkButtonProps['linkType'] = 'default';
-  export let display: LinkButtonProps['display'] = 'unset';
+  export let display: LinkButtonProps['display'] = 'contents';
   export let direction: LinkButtonProps['direction'] = 'unset';
   export let wrap: LinkButtonProps['wrap'] = 'wrap';
   export let justify: LinkButtonProps['justify'] = 'unset';
@@ -19,7 +19,7 @@
   ### Button with link style
 
   @param linkType - Link type. __Default: "default"__
-  @param display - Prop display. __Default: "unset"__
+  @param display - Prop display. __Default: "contents"__
   @param direction - Prop flex-direction. __Default: "unset"__
   @param wrap - Prop flex-wrap. __Default: "wrap"__
   @param justify - Prop justify-content. __Default: "unset"__

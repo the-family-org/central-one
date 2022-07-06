@@ -23,6 +23,10 @@
     display: grid;
   }
 
+  &[data-display='contents'] {
+    display: contents;
+  }
+
   &[data-display='none'] {
     display: none;
   }

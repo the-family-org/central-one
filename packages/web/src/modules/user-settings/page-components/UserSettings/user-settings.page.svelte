@@ -43,28 +43,34 @@
 
 <main class="main">
   <div class="menu">
-    <LinkButton
-      linkType={currentSection === Section.GENERAL ? 'current' : 'default'}
-      on:click={() => setSection(Section.GENERAL)}
-    >
-      {$LL.userSettings.menu.general()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.GENERAL ? 'current' : 'default'}
+        on:click={() => setSection(Section.GENERAL)}
+      >
+        {$LL.userSettings.menu.general()}
+      </LinkButton>
+    </div>
 
-    <LinkButton
-      linkType={currentSection === Section.PROFILE_IMAGE
-        ? 'current'
-        : 'default'}
-      on:click={() => setSection(Section.PROFILE_IMAGE)}
-    >
-      {$LL.userSettings.menu.profileImage()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.PROFILE_IMAGE
+          ? 'current'
+          : 'default'}
+        on:click={() => setSection(Section.PROFILE_IMAGE)}
+      >
+        {$LL.userSettings.menu.profileImage()}
+      </LinkButton>
+    </div>
 
-    <LinkButton
-      linkType={currentSection === Section.THEME ? 'current' : 'default'}
-      on:click={() => setSection(Section.THEME)}
-    >
-      {$LL.userSettings.menu.theme()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.THEME ? 'current' : 'default'}
+        on:click={() => setSection(Section.THEME)}
+      >
+        {$LL.userSettings.menu.theme()}
+      </LinkButton>
+    </div>
   </div>
 
   {#if currentSection === Section.GENERAL}

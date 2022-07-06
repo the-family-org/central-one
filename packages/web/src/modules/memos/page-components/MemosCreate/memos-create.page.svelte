@@ -19,9 +19,9 @@
 <Header sessionTitle={$LL.memos.memos()} />
 <Line />
 
-<PageContent rowGap="l4">
+<PageContent rowGap="l3">
   <div class="group-container">
-    <TitleH1 marginTop="m">{$LL.memos.createMemo()}</TitleH1>
+    <TitleH1 marginTop="s2">{$LL.memos.createMemo()}</TitleH1>
   </div>
 
   <div class="group-container">

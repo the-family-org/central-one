@@ -89,7 +89,7 @@
 <Line />
 
 <PageContent>
-  <TitleH1 strong marginTop="l">{$LL.news.createNews.newsCreation()}</TitleH1>
+  <TitleH1 strong marginTop="s2">{$LL.news.createNews.newsCreation()}</TitleH1>
 
   <form class="form">
     <div class="step">

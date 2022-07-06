@@ -5,5 +5,6 @@ export type DisplayProp =
   | 'inline-block'
   | 'grid'
   | 'grid-inline'
+  | 'contents'
   | 'none'
   | 'unset';

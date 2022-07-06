@@ -49,7 +49,7 @@
 
 <PageContent>
   <div class="group-container">
-    <TitleH1 marginTop="s" marginBottom="m">
+    <TitleH1 marginTop="s" marginBottom="l">
       {$LL.profiles.platformUsers()}
     </TitleH1>
 

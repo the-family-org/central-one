@@ -41,54 +41,70 @@
 
 <main class="main">
   <div class="menu">
-    <LinkButton
-      linkType={currentSection === Section.GENERAL ? 'current' : 'default'}
-      on:click={() => setSection(Section.GENERAL)}
-    >
-      {$LL.platformSettings.generalSection.menu()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.GENERAL ? 'current' : 'default'}
+        on:click={() => setSection(Section.GENERAL)}
+      >
+        {$LL.platformSettings.generalSection.menu()}
+      </LinkButton>
+    </div>
 
-    <LinkButton
-      linkType={currentSection === Section.NEW_ACCOUNT ? 'current' : 'default'}
-      on:click={() => setSection(Section.NEW_ACCOUNT)}
-    >
-      {$LL.platformSettings.newAccountSection.menu()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.NEW_ACCOUNT
+          ? 'current'
+          : 'default'}
+        on:click={() => setSection(Section.NEW_ACCOUNT)}
+      >
+        {$LL.platformSettings.newAccountSection.menu()}
+      </LinkButton>
+    </div>
 
-    <LinkButton
-      linkType={currentSection === Section.GUESTS ? 'current' : 'default'}
-      on:click={() => setSection(Section.GUESTS)}
-    >
-      {$LL.platformSettings.guestsSection.menu()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.GUESTS ? 'current' : 'default'}
+        on:click={() => setSection(Section.GUESTS)}
+      >
+        {$LL.platformSettings.guestsSection.menu()}
+      </LinkButton>
+    </div>
 
-    <!-- <LinkButton
+    <!-- <div><LinkButton
       linkType={currentSection === Section.FEEDBACK ? 'current' : 'default'}
       on:click={() => setSection(Section.FEEDBACK)}
     >
       {$LL.platformSettings.feedbackSection.menu()}
-    </LinkButton> -->
+    </LinkButton></div> -->
 
-    <LinkButton
-      linkType={currentSection === Section.POLLS ? 'current' : 'default'}
-      on:click={() => setSection(Section.POLLS)}
-    >
-      {$LL.platformSettings.pollsSection.menu()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.POLLS ? 'current' : 'default'}
+        on:click={() => setSection(Section.POLLS)}
+      >
+        {$LL.platformSettings.pollsSection.menu()}
+      </LinkButton>
+    </div>
 
-    <LinkButton
-      linkType={currentSection === Section.TOPICS ? 'current' : 'default'}
-      on:click={() => setSection(Section.TOPICS)}
-    >
-      {$LL.platformSettings.topicsSection.menu()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.TOPICS ? 'current' : 'default'}
+        on:click={() => setSection(Section.TOPICS)}
+      >
+        {$LL.platformSettings.topicsSection.menu()}
+      </LinkButton>
+    </div>
 
-    <LinkButton
-      linkType={currentSection === Section.NEWS_READER ? 'current' : 'default'}
-      on:click={() => setSection(Section.NEWS_READER)}
-    >
-      {$LL.platformSettings.newsReaderSection.menu()}
-    </LinkButton>
+    <div>
+      <LinkButton
+        linkType={currentSection === Section.NEWS_READER
+          ? 'current'
+          : 'default'}
+        on:click={() => setSection(Section.NEWS_READER)}
+      >
+        {$LL.platformSettings.newsReaderSection.menu()}
+      </LinkButton>
+    </div>
   </div>
 
   {#if currentSection === Section.GENERAL}

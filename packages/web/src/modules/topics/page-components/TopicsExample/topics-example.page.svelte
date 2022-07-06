@@ -73,28 +73,38 @@
   {#if currentSection !== Section.CHAT_PAGE}
     <div class="menu">
       <div class="menu-pages-container">
-        <LinkButton
-          linkType={currentSection === Section.PAGE_ONE ? 'current' : 'default'}
-          on:click={() => setSection(Section.PAGE_ONE)}
-        >
-          {$LL.topics.example.intro()}
-        </LinkButton>
+        <div>
+          <LinkButton
+            linkType={currentSection === Section.PAGE_ONE
+              ? 'current'
+              : 'default'}
+            on:click={() => setSection(Section.PAGE_ONE)}
+          >
+            {$LL.topics.example.intro()}
+          </LinkButton>
+        </div>
 
-        <LinkButton
-          linkType={currentSection === Section.PAGE_TWO ? 'current' : 'default'}
-          on:click={() => setSection(Section.PAGE_TWO)}
-        >
-          {$LL.topics.example.coatOfArms()}
-        </LinkButton>
+        <div>
+          <LinkButton
+            linkType={currentSection === Section.PAGE_TWO
+              ? 'current'
+              : 'default'}
+            on:click={() => setSection(Section.PAGE_TWO)}
+          >
+            {$LL.topics.example.coatOfArms()}
+          </LinkButton>
+        </div>
 
-        <LinkButton
-          linkType={currentSection === Section.PAGE_THREE
-            ? 'current'
-            : 'default'}
-          on:click={() => setSection(Section.PAGE_THREE)}
-        >
-          {$LL.topics.example.page()} 3
-        </LinkButton>
+        <div>
+          <LinkButton
+            linkType={currentSection === Section.PAGE_THREE
+              ? 'current'
+              : 'default'}
+            on:click={() => setSection(Section.PAGE_THREE)}
+          >
+            {$LL.topics.example.page()} 3
+          </LinkButton>
+        </div>
       </div>
 
       <div class="menu-bottom-pages-container">

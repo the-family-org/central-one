@@ -57,6 +57,7 @@
     display: flex;
     flex-direction: column;
 
+    min-height: 110px;
     border: 3px dashed var(--color-strong-border);
   }
 
@@ -72,13 +73,13 @@
   .files-container {
     display: flex;
     flex-direction: column;
+    overflow: auto;
 
     width: 100%;
     max-height: 200px;
-    padding-top: 3px;
+    padding-left: 8px;
     gap: var(--gap-l);
-
-    overflow: auto;
+    border-left: 3px dashed var(--color-strong-border);
   }
 
   .upload-button {
