@@ -28,7 +28,6 @@
 
   const categories = [
     'sports',
-    'sports',
     'memories',
     'books',
     'gastronomy',
