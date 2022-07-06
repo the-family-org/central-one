@@ -140,7 +140,7 @@ export const news: Translation['news'] = {
     },
     whenWillBePublished: {
       whenWillBePublished: 'Quando a notícia será publicada?',
-      saveToDrafts: 'Salver nos rascunhos e não publicar',
+      saveToDrafts: 'Salvar nos rascunhos e não publicar',
       nextEdition: 'Edição do dia 5 de julho de 2022 (próxima)',
       afterNextEdition: 'Edição do dia 14 de agosto de 2022',
     },
