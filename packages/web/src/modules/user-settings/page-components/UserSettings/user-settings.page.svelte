@@ -155,8 +155,8 @@
         <img
           src="/images/small-profile.example.svg"
           alt="User Profile"
-          width="368"
-          height="368"
+          width="300"
+          height="300"
         />
       </div>
 

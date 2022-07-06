@@ -297,7 +297,7 @@
     flex-direction: column;
 
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 
   .chat-header {

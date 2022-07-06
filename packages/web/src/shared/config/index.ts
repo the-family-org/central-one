@@ -12,6 +12,11 @@ export enum ThemeKey {
   LIGHT_REPTILIAN_THEME = 'light-reptilian',
 }
 
+export enum LocaleCodes {
+  ENGLISH = 'en',
+  PORTUGUESE = 'pt',
+}
+
 export enum Path {
   HOME_PAGE = '/dashboard',
   MEMOS = '/memos',

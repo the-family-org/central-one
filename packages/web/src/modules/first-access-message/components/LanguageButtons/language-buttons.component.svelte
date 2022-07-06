@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Locales } from '$lang/i18n-types';
 
-  import { page } from '$app/stores';
   import { LL, locale } from '$lang/i18n-svelte';
+  import { LocaleCodes } from '$config';
+  import { page } from '$app/stores';
   import { switchLocale } from '$lang/switch-locale';
 
   import { LinkButton } from '$components/LinkButton';
@@ -26,11 +27,23 @@
 <svelte:window on:popstate={handlePopStateEvent} />
 
 <LinkButton
-  linkType={$locale === 'pt' ? 'current' : 'default'}
-  on:click={() => handleLocale('pt', true, location.pathname)}
-  >{$LL.language.originalName.pt()}</LinkButton
-> ❙ <LinkButton
-  linkType={$locale === 'en' ? 'current' : 'default'}
-  on:click={() => handleLocale('en', true, location.pathname)}
-  >{$LL.language.originalName.en()}</LinkButton
+  linkType={$locale === LocaleCodes.PORTUGUESE ? 'current' : 'default'}
+  on:click={() => handleLocale(LocaleCodes.PORTUGUESE, true, location.pathname)}
 >
+  {$LL.language.originalName.pt()}
+</LinkButton>
+
+<span class="separator">❙</span>
+
+<LinkButton
+  linkType={$locale === LocaleCodes.ENGLISH ? 'current' : 'default'}
+  on:click={() => handleLocale(LocaleCodes.ENGLISH, true, location.pathname)}
+>
+  {$LL.language.originalName.en()}
+</LinkButton>
+
+<style lang="scss">
+  .separator {
+    padding: 0 var(--spacing-s3);
+  }
+</style>

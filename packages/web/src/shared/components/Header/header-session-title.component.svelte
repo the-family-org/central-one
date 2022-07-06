@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="title-container">
-    <TitleH2 fontSize="l2"><slot /></TitleH2>
+    <TitleH2 fontSize="l2" style="padding: 6px 0;"><slot /></TitleH2>
   </div>
 </div>
 

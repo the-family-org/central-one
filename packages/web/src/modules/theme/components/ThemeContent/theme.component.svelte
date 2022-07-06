@@ -44,7 +44,7 @@
   </TitleH3>
 </Surface>
 
-<PageContent rowGap="none" direction="row" justify="space-around">
+<PageContent rowGap="none" direction="row">
   <div class="group">
     <TitleH1 strong marginBottom="s">
       {$LL.theme.themesAvailable()}
