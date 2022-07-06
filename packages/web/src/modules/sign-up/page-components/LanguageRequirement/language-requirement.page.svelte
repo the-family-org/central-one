@@ -3,7 +3,7 @@
   import { locales } from '$lang/i18n-util';
   import { switchLocale } from '$lang/switch-locale';
   import { page } from '$app/stores';
-  import { Path } from '$config';
+  import { ExamplePath, Path } from '$config';
   import { nav } from '$utils';
 
   import { Button } from '$components/Button';
@@ -32,17 +32,19 @@
   $: handleLocale($page.params.lang as Locales, false);
 
   const fakeConfirmation = () => {
-    nav({ locale: $locale, path: Path.SIGN_UP_REQUIREMENTS });
+    nav({ locale: $locale, path: ExamplePath.FIRST_ACCESS_MESSAGE });
+    // nav({ locale: $locale, path: Path.SIGN_UP_REQUIREMENTS });
   };
 </script>
 
 <svelte:window on:popstate={handlePopStateEvent} />
 
-<Header brandAndSessionOnly={true}>{$LL.language.languageSettings()}</Header>
-<Line />
+<!-- <Header brandAndSessionOnly={true}>{$LL.language.languageSettings()}</Header>
+<Line /> -->
 
-<PageContent>
-  <div class="container">
+<!-- <PageContent> -->
+<main class="main-container">
+  <div class="content-container">
     <TitleH1 strong>
       {$LL.language.chooseALanguage()}
     </TitleH1>
@@ -73,20 +75,28 @@
       {$LL.language.confirmLanguageChoice()}
     </Button>
 
-    <LeftBorderDiv style="margin-top: 40px;">
+    <!-- <LeftBorderDiv style="margin-top: 40px;">
       {$LL.common.warningMessage()}
-    </LeftBorderDiv>
+    </LeftBorderDiv> -->
   </div>
-</PageContent>
+</main>
+<!-- </PageContent> -->
 
-<Footer showOnlyLogo={true} />
-
+<!-- <Footer showOnlyLogo={true} /> -->
 <style lang="scss">
-  .container {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-container {
     display: flex;
     flex-direction: column;
 
-    max-width: 520px;
+    max-width: 530px;
+    padding: var(--gap-l3) var(--gap-s);
     gap: var(--gap-l2);
   }
 

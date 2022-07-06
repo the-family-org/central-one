@@ -49,6 +49,7 @@ export enum Path {
 }
 
 export enum ExamplePath {
+  FIRST_ACCESS_MESSAGE = '/first-access-message',
   MEMO_EXAMPLE = '/memos/example',
   NEWS_EXAMPLE = '/news/example',
   NEWS_EXAMPLE_READER = '/news/example/reader',

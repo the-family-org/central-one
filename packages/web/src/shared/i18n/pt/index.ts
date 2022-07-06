@@ -3,6 +3,7 @@ import type { Translation } from '../i18n-types';
 import { accounts } from './accounts';
 import { activities } from './activities';
 import { feedback } from './feedback';
+import { firstAccessMessage } from './first-access-message';
 import { forms } from './forms';
 import { homePage } from './home-page';
 import { invitations } from './invitations';
@@ -102,6 +103,7 @@ const pt: Translation = {
   accounts,
   activities,
   feedback,
+  firstAccessMessage,
   forms,
   homePage,
   invitations,
