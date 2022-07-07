@@ -54,12 +54,7 @@
 <svelte:head>
   <title>{env.groupName}</title>
   <meta name="description" content={env.groupName} />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="128x128"
-    href="/images/favicon.png"
-  />
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon.png" />
 </svelte:head>
 
 <slot />
